@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script type="text/javascript">
+    var str;
+    mode();
+      function mode(){
+        str = document.getElementById("sentence").value;
+        var l = document.getElementById('letter').value;
+        var arr = [], count = 0;
+        arr = str.split("");
+        for(var i = 0; i < arr.length; i++){
+          if(arr[i] == l)
+          count++;
+        }
+        document.getElementById('show').innerHTML = "The letter occured " + count + " times";
+      }
+    </script>
+  </head>
+  <body>
+    Enter a string: <input type="text" id = "sentence" name="name" value="">
+    <br><br>Enter a letter to know its frequency of occurance: <input type="text" id = "letter" name="name" value="">
+    <br><br><input type="button" name="go" value="GO" onclick="mode()">
+    <br><br><p id = "show"></p>
+  </body>
+</html>

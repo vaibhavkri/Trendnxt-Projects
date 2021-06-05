@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+	<head>
+		<title>Stock Trading App</title>
+		<style>
+			table, th, td{
+				border : 1px solid black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>Stock Trading App</h1>
+			<table>
+				<tr>
+					<th>TICKER</th>
+					<th>PRICE</th>
+				</tr>
+				<tr>
+					<td>WIPRO</td>
+					<td>298.45</td>
+				</tr>
+				<tr>
+					<td>INFY</td>
+					<td>949.95</td>
+				</tr>
+				<tr>
+					<td>TCS</td>
+					<td>2713.70</td>
+				</tr>
+				<tr>
+					<td>TECHM</td>
+					<td>485.85</td>
+				</tr>
+			</table>
+		<h1>Stock Trading</h1>
+			<form>
+				<table>
+					<tr>
+						<td>Ticker</td>
+						<td><input type='text'/></td>
+					</tr>
+					<tr>
+						<td>Price</td>
+						<td><input type='number' min='10' max='100' step='10' pattern='[0-9]' /></td>
+					</tr>
+					<tr>
+						<td><input type='submit'/></td>
+					</tr>
+				</table>
+			</form>
+	</body>
+</html>

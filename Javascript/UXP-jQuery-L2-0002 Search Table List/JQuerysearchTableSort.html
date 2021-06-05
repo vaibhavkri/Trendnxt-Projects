@@ -1,0 +1,434 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>JQueryTableSort</title>
+	<meta charset="utf-8" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>    
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+   <script src="jquery.table.hpaging.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            //search
+            var $rows = $('#table tr');
+            $('#search').keyup(function () {
+                var val = $.trim($(this).val()).replace(/ +/g, ' ').toLowerCase();
+
+                $rows.show().filter(function () {
+                    var text = $(this).text().replace(/\s+/g, ' ').toLowerCase();
+                    return !~text.indexOf(val);
+                }).hide();
+            });
+          //sort
+            $('th').each(function(col) {
+                  $(this).hover(
+           function() { $(this).addClass('focus'); },
+               function() { $(this).removeClass('focus'); }
+                  );
+                 $(this).click(function() {
+                     if ($(this).is('.asc')) {
+                         $(this).removeClass('asc');
+                          $(this).addClass('desc selected');
+                         sortOrder = -1;
+                         }
+                   else {
+                       $(this).addClass('asc selected');
+                          $(this).removeClass('desc');
+                       sortOrder = 1;
+                         }
+                     $(this).siblings().removeClass('asc selected');
+                     $(this).siblings().removeClass('desc selected');
+                     var arrData = $('table').find('tbody >tr:has(td)').get();
+                      arrData.sort(function(a, b) {
+                          var val1 = $(a).children('td').eq(col).text().toUpperCase();
+                          var val2 = $(b).children('td').eq(col).text().toUpperCase();
+                     if($.isNumeric(val1) && $.isNumeric(val2))
+                         return sortOrder == 1 ? val1-val2 : val2-val1;
+                      else
+                         return (val1 < val2) ? -sortOrder : (val1 > val2) ? sortOrder : 0;
+                         });
+                     $.each(arrData, function(index, row) {
+                         $('#body').append(row);
+                        });
+                      });
+            });
+            //pagination
+            $("table").hpaging({
+                "limit": 20
+            });
+            $("#target1").change(function () {
+                var newPerPage = parseInt($(this).val());
+                $("#table").hpaging("newLimit", newPerPage);
+            });
+			
+			
+        });
+
+    </script>
+	<script type="text/javascript">
+function check()
+{
+ var check=document.getElementsByTagName('input');
+ for(var i=0;i<check.length;i++)
+ {
+  if(check[i].type=='checkbox')
+  {
+   check[i].checked=true;
+  }
+ }
+}
+
+function uncheck()
+{
+ var uncheck=document.getElementsByTagName('input');
+ for(var i=0;i<uncheck.length;i++)
+ {
+  if(uncheck[i].type=='checkbox')
+  {
+   uncheck[i].checked=false;
+  }
+ }
+}
+
+</script>
+
+    <style>
+        table {
+           font-family: arial, sans-serif;
+           border-collapse: collapse;
+           width: 100%;
+        }
+        th {
+        background-color:lightgray;
+        }
+        td,th {
+          text-align: left;
+          padding: 8px;
+        }
+
+        .pagination { display: inline-block; }
+        .pagination a {
+          color: black;
+          float: left;
+          padding: 8px 16px;
+          text-decoration: none;
+        }
+        .pagination a.active {
+          background-color: #4CAF50;
+          color: white;
+        }
+        .pagination a:hover:not(.active) { background-color: #ddd; }
+		
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div id="headerDiv" class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12  btn-group nav navbar-nav">
+                <button type="button" class="btn btn-primary col-lg-3 col-md-3 col-sm-3 col-xs-3">All BOOKS</button>
+                <button type="button" class="btn btn-primary col-lg-3 col-md-3 col-sm-3 col-xs-3">Books & E Books</button>
+                <button type="button" class="btn btn-primary col-lg-3 col-md-3 col-sm-3 col-xs-3">Magazine & Journals</button>
+                <button type="button" class="btn btn-primary col-lg-3 col-md-3 col-sm-3 col-xs-3">Media</button>
+                <br>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 col-lg-offset-1 col-md-offset-1 col-sm-offset-1 col-xs-offset-1">
+                <br> <input type="search" id="search" placeholder="Search" class="form-control" />
+                <u style="font-size:10px;">Advanced Search</u><br><br>
+            </div>
+            <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
+                <br><button type="button" class="btn btn-primary">Search</button>
+            </div>
+        </div>
+        <hr />
+        <h3> Search Results  </h3><br />
+       <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3" style="text-align:right;">
+            <select class="dropdown form-control" id="target1">
+                <option value="20" id="2page">ViewAll</option>
+                <option value="4" id="10page">3 per page</option>
+                <option value="6" id="5page">5 per page</option>
+                <option value="11" id="2page">10 per page</option>
+            </select>
+        </div>
+
+        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3" style="text-align:right;">
+            <select class="dropdown form-control" id="target2">
+                <option value="volvo">Sort </option>
+                <option value="ASC" id="ASC">Ascending</option>
+                <option value="DES" id="DES">Decending</option>
+            </select>
+        </div>
+    </div>
+        <br />
+        <table id="table">
+            <tr>
+                <th> </th>
+                <th style="text-align:center;">Description</th>
+                <th>Type of Book</th>
+                <th>Select</th>
+            </tr>
+            <tbody id="body">
+                <tr>
+                    <td>
+                        <img src="book.png" alt="Book image" style="width:50px;height:50px;">
+                    </td>
+                    <td>
+                        Handbook of Agricultural Entomology by Helmut van Emden<br>
+                        Language : English<br>
+                        Publisher : New York :[ Time-Life Books ], [ 1969-1970 ].
+                    </td>
+                    <td>Agricultural</td>
+                    <td>
+                        <input type="checkbox" id="dis_text" data-toggle="collapse" data-target="#demo1" value="" >
+						<p id="text" style="display:none;"><u>Read|download<u></p>
+					</td>
+
+                </tr>
+                <tr>
+                    <td>
+                        <img src="book1.png" alt="Book image" style="width:50px;height:50px;">
+                    </td>
+                    <td>
+                        Wild about books by Judy Sierra; Marc Tolon Brown<br>
+                        Language : English<br>
+                        Publisher : New York : Alfred A.Knopf, 2004.
+                    </td>
+                    <td>Self help</td>
+                    <td>
+                        <input type="checkbox" id="dis_text1"  data-toggle="collapse" data-target="#demo2"   value="">
+						<p id="text1" style="display:none;"><u>Read|download<u></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="book2.png" alt="Book image" style="width:50px;height:50px;">
+                    </td>
+                    <td>
+                        The purchase of book by public libraries by Great Britaoin <br>
+                        Language : English<br>
+                        Publisher : London, H.M. Stationary Off, 1972.
+                    </td>
+                    <td>Purchase</td>
+                    <td>
+                        <input type="checkbox" id="dis_text2"  data-toggle="collapse" data-target="#demo3"   value="">
+						<p id="text2" style="display:none;"><u>Read|download<u></p>
+					</td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="book.png" alt="Book image" style="width:50px;height:50px;">
+                    </td>
+                    <td>
+                        Handbook of Agricultural Entomology by Helmut van Emden<br>
+                        Language : English<br>
+                        Publisher : New York :[ Time-Life Books ], [ 1969-1970 ].
+                    </td>
+                    <td>Drama</td>
+                    <td>
+                        <input type="checkbox" id="dis_text3"  data-toggle="collapse" data-target="#demo4"   value="">
+						<p id="text3" style="display:none;"><u>Read|download<u></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="book1.png" alt="Book image" style="width:50px;height:50px;">
+                    </td>
+                    <td>
+                        Wild about books by Judy Sierra; Marc Tolon Brown<br>
+                        Language : English<br>
+                        Publisher : New York : Alfred A.Knopf, 2004.
+                    </td>
+                    <td>Agricultural</td>
+                    <td>
+                        <input type="checkbox" id="dis_text4"  data-toggle="collapse" data-target="#demo5"   value="">
+						<p id="text4" style="display:none;"><u>Read|download<u></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="book2.png" alt="Book image" style="width:50px;height:50px;">
+                    </td>
+                    <td>
+                        The purchase of book by public libraries by Great Britaoin <br>
+                        Language : English<br>
+                        Publisher : London, H.M. Stationary Off, 1972.
+                    </td>
+                    <td>Adventure</td>
+                    <td>
+                        <input type="checkbox" id="dis_text5"  data-toggle="collapse" data-target="#demo6"   value="">
+						<p id="text5" style="display:none;"><u>Read|download<u></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="book.png" alt="Book image" style="width:50px;height:50px;">
+                    </td>
+                    <td>
+                        Handbook of Agricultural Entomology by Helmut van Emden<br>
+                        Language : English<br>
+                        Publisher : New York :[ Time-Life Books ], [ 1969-1970 ].
+                    </td>
+                    <td>Mystery</td>
+                    <td>
+                        <input type="checkbox" id="dis_text6"  data-toggle="collapse" data-target="#demo7"   value="">
+						<p id="text6" style="display:none;"><u>Read|download<u></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="book1.png" alt="Book image" style="width:50px;height:50px;">
+                    </td>
+                    <td>
+                        Wild about books by Judy Sierra; Marc Tolon Brown<br>
+                        Language : English<br>
+                        Publisher : New York : Alfred A.Knopf, 2004.
+                    </td>
+                    <td>Mystery</td>
+                    <td>
+                        <input type="checkbox" id="dis_text7"  data-toggle="collapse" data-target="#demo8"   value="">
+						<p id="text7" style="display:none;"><u>Read|download<u></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="book2.png" alt="Book image" style="width:50px;height:50px;">
+                    </td>
+                    <td>
+                        The purchase of book by public libraries by Great Britaoin <br>
+                        Language : English<br>
+                        Publisher : London, H.M. Stationary Off, 1972.
+                    </td>
+                    <td>Adventure</td>
+                    <td>
+                        <input type="checkbox" id="dis_text8"  data-toggle="collapse" data-target="#demo9"   value="">
+						<p id="text8" style="display:none;"><u>Read|download<u></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="book.png" alt="Book image" style="width:50px;height:50px;">
+                    </td>
+                    <td>
+                        Handbook of Agricultural Entomology by Helmut van Emden<br>
+                        Language : English<br>
+                        Publisher : New York :[ Time-Life Books ], [ 1969-1970 ].   
+                    </td>
+                    <td>Mystery</td>
+                    <td>
+                        <input type="checkbox" id="dis_text9"  data-toggle="collapse" data-target="#demo10"   value="">
+						<p id="text9" style="display:none;"><u>Read|download<u></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="book1.png" alt="Book image" style="width:50px;height:50px;">
+                    </td>
+                    <td>
+                        Wild about books by Judy Sierra; Marc Tolon Brown<br>
+                        Language : English<br>
+                        Publisher : New York : Alfred A.Knopf, 2004.
+                    </td>
+                    <td>Wonder</td>
+                    <td>
+                        <input type="checkbox" id="dis_text10"  data-toggle="collapse" data-target="#demo11"   value="">
+						<p id="text10" style="display:none;"><u>Read|download<u></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="book2.png" alt="Book image" style="width:50px;height:50px;">
+                    </td>
+                    <td>
+                        The purchase of book by public libraries by Great Britaoin <br>
+                        Language : English<br>
+                        Publisher : London, H.M. Stationary Off, 1972.
+                    </td>
+                    <td>Adventure</td>
+                    <td>
+                        <input type="checkbox" id="dis_text11"  data-toggle="collapse" data-target="#demo12"   value="">
+						<p id="text11" style="display:none;"><u>Read|download<u></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="book.png" alt="Book image" style="width:50px;height:50px;">
+                    </td>
+                    <td>
+                        Handbook of Agricultural Entomology by Helmut van Emden<br>
+                        Language : English<br>
+                        Publisher : New York :[ Time-Life Books ], [ 1969-1970 ].
+                    </td>
+                    <td>Thriller</td>
+                    <td>
+                        <input type="checkbox" id="dis_text12"  data-toggle="collapse" data-target="#demo13"   value="">
+						<p id="text12" style="display:none;"><u>Read|download<u></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="book1.png" alt="Book image" style="width:50px;height:50px;">
+                    </td>
+                    <td>
+                        Wild about books by Judy Sierra; Marc Tolon Brown<br>
+                        Language : English<br>
+                        Publisher : New York : Alfred A.Knopf, 2004.
+                    </td>
+                    <td>Drama</td>
+                    <td>
+                        <input type="checkbox" id="dis_text13"  data-toggle="collapse" data-target="#demo14"   value="">
+						<p id="text13" style="display:none;"><u>Read|download<u></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="book2.png" alt="Book image" style="width:50px;height:50px;">
+                    </td>
+                    <td>
+                        The purchase of book by public libraries by Great Britaoin <br>
+                        Language : English<br>
+                        Publisher : London, H.M. Stationary Off, 1972.
+                    </td>
+                    <td>Self help</td>
+                    <td>
+                        <input type="checkbox" id="dis_text14"  data-toggle="collapse" data-target="#demo15"   value="">
+						<p id="text14" style="display:none;"><u>Read|download<u></p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+		<br>
+		<div style="text-align: -webkit-right;">
+			<button type="button" class="btn btn-primary" style="background-color:red" onclick="uncheck()">Cancel</button>
+			<button type="button" class="btn btn-primary" onclick="check()">Reserve</button>
+		</div>
+        <div class="row" id="list-group">
+            <div> <h3> Speaker Notes</h3><br></div>
+            <div>
+                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                    <ul class="pagination">
+                        <li><a href="#"> < </a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                    <img src="imgicon.png" alt="image icon" style="width:100px;height:60px;"><img src="align.png" alt="image icon" style="width:100px;height:60px;">
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                    <img src="imgicon.png" alt="image icon" style="width:100px;height:60px;"><img src="align.png" alt="image icon" style="width:100px;height:60px;">
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                    <img src="imgicon.png" alt="image icon" style="width:100px;height:60px;"><img src="align.png" alt="image icon" style="width:100px;height:60px;">
+                </div>
+                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                    <ul class="pagination">
+                        <li><a href="#"> > </a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

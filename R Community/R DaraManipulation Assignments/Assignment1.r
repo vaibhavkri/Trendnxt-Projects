@@ -1,0 +1,6 @@
+data("iris")
+library(sqldf)
+colnames(iris)<-gsub("\\.","_",colnames(iris))
+subiris<-sqldf("SELECT * FROM iris WHERE Sepal_Length>2.5")
+View(subiris)
+class(subiris)

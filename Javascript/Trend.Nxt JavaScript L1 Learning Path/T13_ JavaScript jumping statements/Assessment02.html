@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script type="text/javascript">
+      function getSum(){
+        var sum = 0;
+        for(var i = 3; i <= 1000; i++){
+          if(i % 3 == 0 && i % 5 == 0){
+          sum += i;}
+        }
+        document.getElementById("show").innerHTML = sum;
+      }
+    </script>
+  </head>
+  <body>
+    <input type="button" name="name" value="Get sum of multiples of 3 and 5 upto 1000" onclick = "getSum()">
+    <br><p id = "show">
+
+    </p>
+  </body>
+</html>

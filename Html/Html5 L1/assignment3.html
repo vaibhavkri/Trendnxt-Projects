@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+	<head>
+		<title>Awesome Online videos</title>
+		<style>
+			#title{
+				text-align:center;
+				padding:20px;
+			}
+			
+			video{
+				padding-top : 20px;
+			}
+		</style>
+		
+	</head>
+	<body>
+		<header>
+			<div class="split left">
+				
+					<img src="awesome.jpg" alt="awesome" style="float:left;width:100px;height:42px;>
+				
+			</div>
+
+			<div class="split right">
+				
+					<h1 id='title'>Awesome Online videos</h1>
+				
+			</div>
+			
+		</header>
+			<h2>Sample Video.</h2>
+			<button onClick='play()'>play</button>
+			<button onClick='pause()'>pause</button>
+			<br/>
+			<video id='vid' width='750px' height='400px'>
+				<source src='video.mp4' type='video/mp4'><source>
+			<video>
+		<script>
+			var video = document.getElementById('vid');
+			var play = function(){
+				video.play();
+			}
+			var pause = function(){
+				video.pause();
+			}
+		</script>
+	</body>
+</html>

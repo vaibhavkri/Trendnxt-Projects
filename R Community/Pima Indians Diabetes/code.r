@@ -1,0 +1,11 @@
+Input = read.csv("D:/vaibhav/trend nxt/topgear/R Community/Pima_Indian/Pima Indians Diabetes Binary Classification dataset.csv", header = TRUE)
+head(Input)
+summary(Input)
+colnames(Input)
+str(Input)
+logitfit = glm(Class.variable..0.or.1. ~ Number.of.times.pregnant + Plasma.glucose.concentration.a.2.hours.in.an.oral.glucose.tolerance.test + Diastolic.blood.pressure..mm.Hg. + Triceps.skin.fold.thickness..mm. + X2.Hour.serum.insulin..mu.U.ml. + Body.mass.index..weight.in.kg..height.in.m..2. + Diabetes.pedigree.function + Age..years., data=Input, family=binomial(logit))
+summary(logitfit)
+Model1Pred = round(predict(logitfit, Input, type="response"))
+table(Input$Class.variable..0.or.1., Model1Pred)
+Input$Predicted = Model1Pred
+write.csv(Input, "D:/vaibhav/trend nxt/topgear/R Community/Pima_Indian/Output.csv")

@@ -1,0 +1,133 @@
+PS D:\trend_next\PowerShell-L1> dir                                                                                     
+
+    Directory: D:\trend_next\PowerShell-L1
+
+
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+d-----        1/20/2020   3:38 PM                assignment-11
+d-----        1/20/2020   3:14 PM                screenshots
+-a----        1/20/2020   1:35 PM             50 assignment-01.ps1
+-a----        1/20/2020   1:35 PM            331 assignment-07.ps1
+-a----        1/20/2020   1:35 PM            205 assignment-08_i.ps1
+-a----        1/20/2020   1:35 PM            332 assignment-08_ii.ps1
+-a----        1/20/2020   1:35 PM            349 assignment-08_iii.ps1
+-a----        1/20/2020   1:35 PM            212 assignment-08_iv.ps1
+-a----        1/20/2020   1:35 PM            303 assignment-08_v.ps1
+-a----        1/20/2020   1:35 PM            454 assignment-08_vi.ps1
+-a----        1/20/2020   1:35 PM             37 assignment-09_a_i.ps1
+-a----        1/20/2020   1:35 PM             86 assignment-09_a_ii.ps1
+-a----        1/20/2020   1:35 PM             82 assignment-09_b_i.ps1
+-a----        1/20/2020   1:35 PM            170 assignment-09_b_ii.ps1
+-a----        1/20/2020   1:35 PM             49 assignment-09_c.ps1
+-a----        1/20/2020   1:35 PM             52 assignment-09_d.ps1
+-a----        1/20/2020   1:35 PM            106 assignment-09_e.ps1
+-a----        1/20/2020   1:35 PM             72 assignment-09_f.ps1
+-a----        1/20/2020   1:35 PM             50 assignment-10.ps1
+-a----        1/20/2020   1:35 PM            232 README.md
+
+
+PS D:\trend_next\PowerShell-L1> .\assignment-01                                                                         
+Windows IP Configuration
+
+
+Ethernet adapter Ethernet:
+
+   Connection-specific DNS Suffix  . : wipro.com
+   IPv4 Address. . . . . . . . . . . : 10.113.134.107
+   Subnet Mask . . . . . . . . . . . : 255.255.255.128
+   Default Gateway . . . . . . . . . : 10.113.134.1
+
+Windows IP Configuration
+
+
+Ethernet adapter Ethernet:
+
+   Connection-specific DNS Suffix  . : wipro.com
+   IPv4 Address. . . . . . . . . . . : 10.113.134.107
+   Subnet Mask . . . . . . . . . . . : 255.255.255.128
+   Default Gateway . . . . . . . . . : 10.113.134.1
+
+
+    Directory: D:\trend_next\PowerShell-L1
+
+
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+d-----        1/20/2020   3:38 PM                assignment-11
+d-----        1/20/2020   3:14 PM                screenshots
+-a----        1/20/2020   1:35 PM             50 assignment-01.ps1
+-a----        1/20/2020   1:35 PM            331 assignment-07.ps1
+-a----        1/20/2020   1:35 PM            205 assignment-08_i.ps1
+-a----        1/20/2020   1:35 PM            332 assignment-08_ii.ps1
+-a----        1/20/2020   1:35 PM            349 assignment-08_iii.ps1
+-a----        1/20/2020   1:35 PM            212 assignment-08_iv.ps1
+-a----        1/20/2020   1:35 PM            303 assignment-08_v.ps1
+-a----        1/20/2020   1:35 PM            454 assignment-08_vi.ps1
+-a----        1/20/2020   1:35 PM             37 assignment-09_a_i.ps1
+-a----        1/20/2020   1:35 PM             86 assignment-09_a_ii.ps1
+-a----        1/20/2020   1:35 PM             82 assignment-09_b_i.ps1
+-a----        1/20/2020   1:35 PM            170 assignment-09_b_ii.ps1
+-a----        1/20/2020   1:35 PM             49 assignment-09_c.ps1
+-a----        1/20/2020   1:35 PM             52 assignment-09_d.ps1
+-a----        1/20/2020   1:35 PM            106 assignment-09_e.ps1
+-a----        1/20/2020   1:35 PM             72 assignment-09_f.ps1
+-a----        1/20/2020   1:35 PM             50 assignment-10.ps1
+-a----        1/20/2020   1:35 PM            232 README.md
+
+Windows IP Configuration
+
+
+Ethernet adapter Ethernet:
+
+   Connection-specific DNS Suffix  . : wipro.com
+   IPv4 Address. . . . . . . . . . . : 10.113.134.107
+   Subnet Mask . . . . . . . . . . . : 255.255.255.128
+   Default Gateway . . . . . . . . . : 10.113.134.1
+
+Active Connections
+
+  Proto  Local Address          Foreign Address        State
+  TCP    10.113.134.107:7680    D-113201820:54857      TIME_WAIT
+  TCP    10.113.134.107:7680    D-113201820:54867      TIME_WAIT
+  TCP    10.113.134.107:7680    D-113201842:53152      ESTABLISHED
+  TCP    10.113.134.107:7680    10.113.172.80:62421    ESTABLISHED
+  TCP    10.113.134.107:50279   BLR-EC-ISDC01:ldap     ESTABLISHED
+  TCP    10.113.134.107:50674   pdc-proxy:8080         ESTABLISHED
+  TCP    10.113.134.107:50678   pdc-proxy:8080         ESTABLISHED
+  TCP    10.113.134.107:51843   52.113.194.132:https   ESTABLISHED
+  TCP    10.113.134.107:52336   pdc-proxy:8080         CLOSE_WAIT
+  TCP    10.113.134.107:52337   pdc-proxy:8080         CLOSE_WAIT
+  TCP    10.113.134.107:52403   52.114.142.91:https    ESTABLISHED
+  TCP    10.113.134.107:52404   52.114.14.44:https     ESTABLISHED
+  TCP    10.113.134.107:52547   topgear-app:https      CLOSE_WAIT
+  TCP    10.113.134.107:52549   topgear-app:https      ESTABLISHED
+  TCP    10.113.134.107:52591   PUN-PDC2-CM-MP:http    ESTABLISHED
+  TCP    10.113.134.107:52605   PUN-PDC2-CM-MP:http    ESTABLISHED
+  TCP    10.113.134.107:52608   blrec-cbrkweb01:http   ESTABLISHED
+  TCP    10.113.134.107:52609   PUN-PDC2-CM-MP:http    ESTABLISHED
+  TCP    10.113.134.107:52624   52.114.7.31:https      ESTABLISHED
+  TCP    10.113.134.107:52627   52.114.76.37:https     TIME_WAIT
+  TCP    10.113.134.107:52628   40.100.138.114:https   TIME_WAIT
+  TCP    10.113.134.107:52632   pdc-proxy:8080         ESTABLISHED
+  TCP    10.113.134.107:52634   52.114.75.149:https    TIME_WAIT
+  TCP    10.113.134.107:52635   52.114.74.44:https     ESTABLISHED
+  TCP    10.113.134.107:52637   52.114.76.35:https     ESTABLISHED
+  TCP    10.113.134.107:52639   pdc-proxy:8080         ESTABLISHED
+  TCP    10.113.134.107:52640   pdc-proxy:8080         TIME_WAIT
+  TCP    10.113.134.107:52641   pdc-proxy:8080         ESTABLISHED
+  TCP    10.113.134.107:52642   13.107.3.128:https     ESTABLISHED
+  TCP    10.113.134.107:52646   BLR-SJP-DMTXIN5:4000   TIME_WAIT
+  TCP    10.113.134.107:52647   a104-89-173-239:http   ESTABLISHED
+  TCP    10.113.134.107:58495   sippooldm10a20:https   ESTABLISHED
+  TCP    10.113.134.107:58874   a104-108-194-216:https  CLOSE_WAIT
+  TCP    10.113.134.107:58877   a104-108-194-216:https  CLOSE_WAIT
+  TCP    10.113.134.107:61218   ec2-35-164-235-110:https  CLOSE_WAIT
+  TCP    10.113.134.107:61983   40.119.211.203:https   ESTABLISHED
+  TCP    10.113.134.107:62170   40.90.189.152:https    ESTABLISHED
+  TCP    10.113.134.107:65422   10.113.50.73:8883      ESTABLISHED
+  TCP    127.0.0.1:8001         D-113201727:52644      ESTABLISHED
+  TCP    127.0.0.1:52644        D-113201727:8001       ESTABLISHED
+
+
+PS D:\trend_next\PowerShell-L1>  

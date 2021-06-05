@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script type="text/javascript">
+      function divide(){
+        var quotient, a, b;
+        a = document.getElementById("dividend").value;
+        b = document.getElementById("divisor").value;
+        try {
+          quotient = a/b;
+          if(isFinite(quotient)){
+            document.getElementById('show').innerHTML = quotient;
+          }
+          else
+          {throw new Error("Invalid division");}
+
+        } catch (e) {
+          document.getElementById('show').innerHTML = "Invalid division!";
+        } 
+        }
+    </script>
+  </head>
+  <body>
+    Enter dividend: <input type="text" name="name" value="" id = "dividend">
+    <br><br>
+    Enter divisor: <input type="text" name="name" value="" id = "divisor">
+    <br><input type="button" name="name" value="Calculate Division" onclick = "divide()">
+    <br><br><p id = "show">
+
+    </p>
+  </body>
+</html>

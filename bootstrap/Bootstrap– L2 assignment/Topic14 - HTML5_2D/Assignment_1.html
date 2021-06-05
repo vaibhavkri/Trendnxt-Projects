@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <title>Assignment 1</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script type="text/javascript">
+        window.onload = function() {
+            var canvas = document.getElementById("canvas");
+            var context = canvas.getContext("2d");
+            // Yellow Rectangle
+            context.rect(00, 00, 250, 90);
+            context.fillStyle = "#FFFF00";
+            context.fill();
+            // Red Rectangle
+            context.beginPath();
+            context.rotate(25 * Math.PI / 180);
+            context.rect(30, 10, 250, 100);
+            context.fillStyle = "#FF0000";
+            context.fill();
+            // Blue Rectangle
+            context.beginPath();
+            context.rotate(20 * Math.PI / 180);
+            context.rect(60, 05, 250, 100);
+            context.fillStyle = "#0000FF";
+            context.fill();
+        };
+    </script>
+</head>
+
+<body>
+    <br>
+    <div class="container">
+        <canvas id="canvas" width="300" height="145"></canvas>
+    </div>
+</body>
+
+</html>

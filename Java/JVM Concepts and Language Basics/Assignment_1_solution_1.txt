@@ -1,0 +1,766 @@
+//Topic 1:JVM Concepts and Language Basics
+//Assignment1:
+//solution1
+public class Main
+{
+	public static void main(String[] args) 
+	{
+		System.out.println("Welcome to Java Programming");
+		System.out.println("Vaibhavkrishna");
+	}
+}
+
+//Assignment2: 
+//solution2(a)
+public class Main
+{
+	static int a;
+	public static void main(String[] args) 
+	{
+		a = (-5+8*6);
+		System.out.println("Result:"+a);
+	}
+}
+
+
+
+
+//solution2(b)
+public class Main
+{
+	static int a;
+	public static void main(String[] args) 
+	{
+		a = (55+9)%9;
+		System.out.println("Result:"+a);
+	}
+}
+
+//solution2(c)
+public class Main
+{
+	static double a;
+	public static void main(String[] args) 
+	{
+		a = 20.00+(-3.0*5.0/8.0);
+		System.out.println("Result:"+String.format("%.2f",a));
+	}
+}
+
+//solution2(d)
+public class Main
+{
+	static int a;
+	public static void main(String[] args) 
+	{
+		a = (5+(15/3)*2-(8%3));
+		System.out.println("Result:"+a);
+	}
+}
+
+
+//Assignment3:
+ //Write a Java program to convert minutes into a number of years and days.
+//solution
+
+import java.util.Scanner;
+public class Main
+{
+	static int min;
+	public static void main(String[] args) 
+	{
+		Scanner obj = new Scanner(System.in);
+		System.out.println("Enter the time in minutes:");
+		min = obj.nextInt();
+		int year = min/(365*24*60);
+		int x = min%(365*24*60);
+		int day = x/(24*60);
+		System.out.println(year+" year and "+day+" days");
+		 
+	}
+}
+
+
+//Assignment4:
+//Write a program to print month in words, based on input month in numbers.(using switch case)
+//solution4
+
+import java.util.Scanner;
+public class Main
+{
+	static int num;
+	public static void main(String[] args) 
+	{
+		Scanner obj = new Scanner(System.in);
+		System.out.println("Enter the month in number:");
+		num = obj.nextInt();
+	switch (num)
+    {
+    case 1:
+        System.out.println ("January");
+        break;
+    case 2:
+        System.out.println ("February");
+        break;
+    case 3:
+        System.out.println ("March");
+        break;
+    case 4:
+        System.out.println ("April");
+        break;
+    case 5:
+        System.out.println ("May");
+        break;
+    case 6:
+        System.out.println ("June");
+        break;
+    case 7:
+        System.out.println ("July");
+        break;
+    case 8:
+        System.out.println ("August");
+        break;
+    case 9:
+        System.out.println ("September");
+        break;
+    case 10:
+        System.out.println ("October");
+        break;
+    case 11:
+        System.out.println ("November");
+        break;
+    case 12:
+        System.out.println ("December");
+        break;
+        default:
+            System.out.println ("invalid number");
+    }
+	}
+}
+
+
+
+//Assignment6:
+//Write a program to find greatest number in an array
+
+import java.util.Scanner;
+
+    public class Main 
+
+    {
+
+        public static void main(String[] args) 
+
+        {
+
+            int n, max;
+
+            Scanner s = new Scanner(System.in);
+
+            System.out.print("Enter number of elements in the array:");
+
+            n = s.nextInt();
+
+            int a[] = new int[n];
+
+            System.out.println("Enter elements of array:");
+
+            for(int i = 0; i < n; i++)
+
+            {
+
+                a[i] = s.nextInt();
+
+            }
+
+            max = a[0];
+
+            for(int i = 0; i < n; i++)
+
+            {
+
+                if(max < a[i])
+
+                {
+
+                    max = a[i];
+
+                }
+
+            }
+
+            System.out.println("Maximum value:"+max);
+
+        }
+}
+
+
+
+
+//Topic 2:Object Oriented Concepts
+//Assignment1:
+//solution1
+
+    class Book
+    {
+        int price;
+        String isbn,title,author;
+        Book(int price,String isbn,String title,String author)
+        {
+            this.price = price;
+            this.isbn = isbn;
+            this.title = title;
+            this.author = author;
+        }
+        public void displayDetails()
+        {
+            System.out.println("ISBN:"+isbn);
+            System.out.println("Author:"+author);
+            System.out.println("Title:"+title);
+            System.out.println("Price:"+price);
+        }
+        public double discountedPrice(double discountPercent)
+        {
+            double finalPrice = price - (price*(0.01*discountPercent));
+            return(finalPrice);
+        }
+    }
+    
+    public class Main
+    {
+        public static void main (String[] args)
+        {
+            Book obj = new Book(250,"938476114-1","Java world","Sun System");
+            obj.displayDetails();
+            double x = obj.discountedPrice(10);
+            System.out.println("Final Price "+x);
+        }
+    }
+
+
+
+//Assignment 3.
+//solution
+
+class Book
+    {
+        int price;
+        String isbn,title;
+        Book(int price,String isbn,String title)
+        {
+            this.price = price;
+            this.isbn = isbn;
+            this.title = title;
+        }
+        public void displayDetails()
+        {
+            System.out.println("ISBN:"+isbn);
+            System.out.println("Title:"+title);
+            System.out.println("Price:"+price);
+        }
+        
+    }
+    class Magazine extends Book
+    {
+        String type;
+        Magazine(String type)
+        {
+           super(250,"2555-5","Alchemist");
+           this.type = type; 
+        }
+        void dispm()
+        {
+            System.out.println("Type of Magazine:"+type);
+        }
+        
+    }
+    
+    class Novel extends Book
+    {
+        String author;
+        Novel(String author)
+        {
+            super(250,"2555-5","Alchemist");
+            this.author = author;
+        }
+        void dispn()
+        {
+            System.out.println("Author name:"+author);
+        }
+    }
+    
+    public class Main
+    {
+        public static void main (String[] args)
+        {
+            Magazine obj1 = new Magazine("Consumer");
+            Novel obj2 = new Novel("Paulo Coelho");
+            
+            obj1.displayDetails();
+            obj1.dispm();
+            obj2.dispn();
+        }
+    }
+
+
+
+//Assignment 5.
+//solution
+
+abstract class Instrument
+{
+    abstract void play();
+}
+
+class Piano extends Instrument
+{
+    void play()
+    {
+        System.out.println("Piano is playing  tan tan tan tan");
+    }
+}
+class Flute extends Instrument
+{
+    void play()
+    {
+        System.out.println("Flute is playing  toot toot toot toot");
+    }
+}
+class Guitar extends Instrument
+{
+    void play()
+    {
+        System.out.println("Guitar is playing  tin  tin  tin ");
+    }
+}
+
+public class Main 
+{ 
+    public static void main(String [] args)
+    { 
+        Instrument ins[] = new Instrument[10];
+        for(int i=0;i<10;i++) 
+        { 
+            if(i==1 || i==5 || i==9)
+                ins[i]=new Piano();
+            else if(i==3 || i==4 || i==7)
+                ins[i]=new Flute();
+            else 
+                ins[i]=new Guitar();
+            ins[i].play();
+            if(ins[i] instanceof Piano)
+                System.out.println("Instance Of Piano"); 
+            else if(ins[i] instanceof Flute)
+                System.out.println("Instance Of Flute"); 
+            else 
+                System.out.println("Instance Of Guitar"); 
+            System.out.println();
+        }
+    }
+}
+
+
+
+//Asssignment 6.
+//solution
+package music;
+public interface Playable {
+	public void play();
+}
+
+package music.wind;
+import music.Playable;
+public class Saxophone implements Playable {
+	public void play() {
+        System.out.println("Saxophone is being played");
+    }
+}
+
+package music.string;
+import music.Playable;
+public class Veena implements Playable {
+	public void play() {
+        System.out.println("Violin is being played");
+    }
+}
+
+import music.Playable;
+import music.string.Veena;
+import music.wind.Saxophone;
+public class MusicMain {
+    public static void main(String args[]) {
+        Veena v = new Veena();
+        Saxophone s = new Saxophone();
+        Playable pv, ps; // Place the above instances in a variable of type Playable and then call play().
+        pv = new Veena();
+        ps = new Saxophone();
+        
+        v.play(); // Create an instance of Veena and call play() method
+        s.play(); // Create an instance of Saxophone and call play() method
+        
+        pv.play(); //Place the above instances in a variable of type Playable and then call play().
+        ps.play();
+        
+    }
+}
+
+
+
+//Topic 3: Exceptions, String Concepts 
+//Assignment 1: 
+//solution 
+
+public class Main { 
+public static void main(String args[]){ 
+if(args.length == 2) 
+{ 
+try 
+{ 
+int age = Integer.parseInt(args[0]); 
+String name = args[1]; 
+if(age>= 18 && age <60) 
+System.out.println("Age of "+name+" is accepted for the class"); 
+else 
+System.out.println("Age of "+name +" is not in required range"); 
+} 
+catch(NumberFormatException e){ 
+System.out.println("Your input is not a number"); 
+}catch(ArrayIndexOutOfBoundsException e){ //if no input given 
+System.out.println("Please enter the agruments on the command line"); 
+} 
+} 
+else 
+{ 
+System.out.println("Pls enter required arguments"); 
+} 
+} 
+} 
+
+
+
+//Assignment 3. 
+//solution 
+class Average 
+{ 
+public static void main(String args[]) 
+{ 
+double total=0; 
+try 
+{ 
+if(args.length ==5) 
+{ 
+for(int i=0;i<args.length;i++) 
+{ 
+try 
+{ 
+double number=Integer.parseInt(args[i]); 
+total = total + number; 
+} 
+catch(NumberFormatException e) 
+{ 
+System.out.println(" Invalid argument value"); 
+} 
+} 
+System.out.println("Average:"+(total/args.length)); 
+} 
+} 
+catch(ArrayIndexOutOfBoundsException e) 
+{ 
+System.out.println("Pls enter the required no of arguments"); 
+} 
+} 
+} 
+
+
+
+//Assignment 4. 
+//solution 
+
+import java.util.Scanner; 
+public class Main 
+{ 
+public static void main(String args[]) 
+{ 
+String str, rev = ""; 
+Scanner sc = new Scanner(System.in); 
+System.out.println("Enter a string:"); 
+str = sc.nextLine(); 
+int length = str.length(); 
+for ( int i = length - 1; i >= 0; i-- ) 
+rev = rev + str.charAt(i); 
+if (str.equals(rev)) 
+System.out.println(str+" is a palindrome"); 
+else 
+System.out.println(str+" is not a palindrome"); 
+} 
+} 
+
+
+
+//Assignment 5. 
+//solution 
+
+public class Main
+{ 
+public static void main(String[] args) 
+    { 
+        String str = "This is an Example Of The Character"; 
+        System.out.println("Length Of String:" + str.length()); 
+        int x = str.replaceAll("a", "").length(); 
+        int charcount = str.length() - x; 
+        System.out.println("Occurrence Of A Char In String: " + charcount); 
+    } 
+} 
+
+
+
+//Topic 4: Threads, Collection Framework, Garbage Collection 
+//Assignment 1.
+//solution
+
+class A implements Runnable
+    {
+	    public void run()
+	    {
+		
+		    for(int i=0;i<5;i++)
+		    {
+		        int random = (int)(Math.random() * 50 + 1);
+		        //int no = random;
+		        System.out.println("Random no:"+random);
+		    }
+	    }
+    }
+
+
+class B extends A
+
+{
+    public void run()
+    {  
+      int i,fact=1;  
+      int number=random;    
+      for(i=1;i<=number;i++)
+      {    
+          fact=fact*i;    
+      }    
+      System.out.println("Factorial of "+number+" is: "+fact);    
+    }  
+}
+
+public class Main
+{
+    public static void main(String args[])
+    {
+        A obj1 = new A();
+        B obj2 = new B();
+        obj2.run();
+        
+    }
+}
+
+
+
+//Assignment 2.
+//solution
+
+import java.util.*;
+public class Main
+{
+    static int flag = 1;
+    public static void main(String[] args)
+    {
+        while (true && flag<=11)
+        {
+            Calendar a = Calendar.getInstance();
+            String wTime = "HH:MM:SS";
+
+            String sec = Integer.toString(a.get(Calendar.SECOND));
+            String min = Integer.toString(a.get(Calendar.MINUTE));
+            String hour = Integer.toString(a.get(Calendar.HOUR_OF_DAY));
+            String time = hour + ":" + min + ":" + sec;
+            
+            if(time == wTime)
+            {
+                
+            }
+            try 
+            {
+            
+                    System.out.println(time);
+                    Thread.sleep(2000);
+                    flag++;
+            
+            }
+            catch (InterruptedException e) 
+            {
+                e.printStackTrace();
+            }
+        }
+    }
+}
+
+
+
+//Assignment 4.
+//solution
+
+public class Student
+    {
+
+        public String studentId;
+        public String studentName;
+        public Student(String studentId, String studentName)
+        {
+            this.studentId=studentId;
+            this.studentName =studentName;
+
+        }
+        @Override
+        public int hashCode() 
+        {
+            return 1234;
+        }
+        @Override
+        public boolean equals(Object o)
+        {
+            if (o instanceof Student) 
+            {
+                Student student=(Student)o;
+                if (this.studentId.equalsIgnoreCase(student.studentId))
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            else
+            {
+                return false;
+            }
+        }
+    }
+    
+    public class PhoneNumber
+    {
+        public String phoneNumber;
+        public PhoneNumber(String phoneNumber)
+        {
+            this.phoneNumber =phoneNumber;
+        }
+    }
+
+import java.util.HashMap;
+import java.util.Set;
+import java.util.List;
+import com.google.common.collect.Lists;
+public class Person 
+{
+    public static void main(String[] args)
+    {
+        Student e1=new Student("e001","studentOne");
+        Student e2=new Student("e002","studentTwo");
+
+
+        PhoneNumber d1 = new PhoneNumber("9999999998");
+        PhoneNumber d2 = new PhoneNumber("9999999999");
+        List listOfPhoneNumbersOfStudentOne = Lists.newArrayList(d1,d2);
+
+        PhoneNumber d3 = new PhoneNumber("9999999997");
+        PhoneNumber d4 = new PhoneNumber("9999999996");
+        List listOfPhoneNumbersOfStudentTwo = Lists.newArrayList(d3,d4);
+
+// Here Student made as key by overriding hashCode() and equals() method.
+
+        HashMap<Student, List<PhoneNumber>> map=new HashMap<Student, List<PhoneNumber>>();
+        map.put(e1, listOfPhoneNumbersOfStudentOne);
+        map.put(e2, listOfPhoneNumbersOfStudentTwo);
+
+        Set<Student> key=map.keySet();
+        for (Student student : key) {
+        System.out.println(student.studentId+" "+student.studentName +" ");
+
+
+            }
+        }
+
+    }
+
+
+
+//Assignment 5: 
+//solution 
+
+import java.util.Collections; 
+import java.util.HashSet; 
+import java.util.Iterator; 
+
+public class Main 
+{ 
+    public static void main(String args[]) 
+    { 
+        // create hash set 
+        HashSet <String> newset = new HashSet <String>(); 
+        // populate hash set 
+        newset.add("Employee1"); 
+        newset.add("Employee2"); 
+        newset.add("Employee3"); 
+        // create an iterator 
+        Iterator iterator = newset.iterator(); 
+        // check values 
+        System.out.println("Retrieving values from HashSet using Iterator"); 
+        while (iterator.hasNext()) 
+        { 
+            System.out.println("Emp Name: "+iterator.next() + " "); 
+        } 
+    } 
+} 
+
+
+
+//Topic 5: Command Line Args, System Properties, Packaging 
+//Assignment 1. 
+//solution 
+
+package test; 
+public class Foundation 
+{ 
+    private int var1 = 21; 
+    default int var2 = 11; 
+    protected int var3 = 121; 
+    public int var4 = 221; 
+    public void accessVars() 
+    { 
+        System.out.println(var1); 
+        System.out.println(var2); 
+        System.out.println(var3); 
+        System.out.println(var4); 
+    } 
+} 
+
+import test.Foundation; 
+class Foundation1 extends Foundation 
+{ 
+    public static void main(String args[]) 
+    { 
+        Foundation c = new Foundation(); 
+        c.accessVars(); 
+    } 
+} 
+
+
+
+//Assignment 2: 
+//solution 
+
+public class Main 
+{ 
+    public static void main(String args[]) 
+    { 
+        System.out.println(args[0] + " technologies "+args[1] ); 
+        System.out.println(); 
+    } 
+} 
+

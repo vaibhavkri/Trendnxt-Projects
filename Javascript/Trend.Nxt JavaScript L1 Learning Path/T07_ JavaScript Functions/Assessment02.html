@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script type="text/javascript">
+      function combine(){
+        var arr1 = [], arr2 = [], result = [];
+        arr1 = document.getElementById("list1").value.split(" ");
+        arr2 = document.getElementById("list2").value.split(" ");
+
+        for(var i = 0; i < (arr1.length > arr2.length ? arr1.length:arr2.length); i++){
+          if(i < arr1.length)
+          result.push(arr1[i]);
+          if(i < arr2.length)
+          result.push(arr2[i]);
+        }
+        document.getElementById("showlist").innerHTML = result;
+      }
+    </script>
+  </head>
+  <body>
+    Enter 1st list: <input type="text" id = "list1" name="list1" value="" placeholder="Provide a space between 2 elements">
+    <br><br>Enter 2nd list: <input type="text" id = "list2" name="list2" value="" placeholder="Provide a space between 2 elements">
+    <br><br><input type="button" name="name" value="Combine above two lists" onclick = "combine()">
+    <br><br><p id = "showlist"></p>
+  </body>
+</html>

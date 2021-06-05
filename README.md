@@ -1,2 +1,2 @@
-# Trendnxt-Projects
- Wipro Trendnxt Hands on projects
+# TrendNxt
+ TrendNxt Hands on

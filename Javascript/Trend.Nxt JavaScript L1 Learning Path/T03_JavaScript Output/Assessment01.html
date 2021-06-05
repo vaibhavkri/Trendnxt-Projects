@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h4>JavaScript - Topic 3 - Assignment 1</h4>
+<p id="random"></p>
+
+<script>
+function myfun(){
+		var y = Math.ceil(Math.random() * 10);
+		var result;
+		var n =Number(window.prompt("Enter the number",""));
+		console.log(typeof(n));
+		if(n==y){
+			result="Good Work";
+		}
+		else{
+			result="Not Matched";
+		}
+		window.alert("The random generated number was : " + y +" and input is "+ n + "  " +result);
+		
+	}
+		</script>
+
+
+
+		<button type="button" onClick="myfun()">Click to compare</button>
+
+
+</body>
+</html> 

@@ -1,0 +1,12 @@
+Hierarchical clustering adopts either an agglomerative or divisive method to build a hierarchy of clusters. Regardless of which approach is adopted, both initially use a distance similarity measure to combine clusters or split clusters. The recursive process continues until there is only one cluster left or one cannot split more clusters. Eventually, one can use a dendrogram to represent the hierarchy of clusters. 
+
+use hotel.csv file and
+
+a) show how to cluster hotel location data with hierarchical clustering. That is  perform hierarchical clustering on hotel location data to identify whether the hotels are located in the same district. 
+
+
+Also  cut the hierarchy of clusters into 3.
+
+b) using k-means clsuter location data for 3 clusters
+
+c) compare both clustering methods accuracy

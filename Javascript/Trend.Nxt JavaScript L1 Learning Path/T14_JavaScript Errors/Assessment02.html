@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<h4> 
+Topic 14: JavaScript Errors
+
+Assignment 2:
+Write a JavaScript function to validate whether a given value type is error or not.
+</h4>
+  <meta charset="utf-8">
+  
+</head>
+<body>
+<script>
+function is_Error(input) {
+   return input instanceof Error || toString.call(input) === '[object Error]';
+}
+
+document.write(is_Error(new Error('foo')));
+
+document.write("<br>"+is_Error(100));
+
+document.write("<br>"+is_Error('foo'));
+
+</script>
+</body>
+</html>

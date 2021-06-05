@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script type="text/javascript">
+    function large(){
+      var arr = [], largeNum = 0;
+      var str = document.getElementById('nums').value;
+      arr = (str.split(" "));
+      largeNum = arr[0];
+      for(var i = 0; i < arr.length; i++){
+        if(arr[i] > largeNum){
+          largeNum = arr[i];
+        }
+      }
+      document.getElementById('show').innerHTML = largeNum;
+    }
+    </script>
+  </head>
+  <body>
+    Enter numbers with spaces in between: <input type="text" id = "nums" name="name" value="">
+    <br><br><input type="button" name="name" value="Get Largest" onclick="large()">
+    <br><br><p id = "show">
+
+    </p>
+  </body>
+</html>

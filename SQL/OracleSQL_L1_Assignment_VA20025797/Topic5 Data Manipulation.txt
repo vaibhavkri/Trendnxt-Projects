@@ -1,0 +1,47 @@
+Assignment : 1 
+A. INSERT into Employee (EMPNO, ENAME, JOB, MGR, 
+						HIREDATE, SAL,COMM,DEPTNO) values (1,’Vicky', ‘HR’, 41, ’26-11-2001’, 50000,10000,10),
+															(2,’Lucky', ‘Manager’, 11, ’20-12-2009’, 20000,0,20),
+															(3,’Ajay’, ‘Senior Analyst’, 21, ’15-11-2003’, 35000,8000,30),
+															(4,’Illeana’, ‘Manager’, 42, ’26-07-2002’, 50000,10000,10),
+															(5,’Ricky’, ‘HR Manager’, 51, ’11-01-2005’, 45000,11000,20),
+															(6,’Sona’, ‘Software Engineer’, 81, ’06-06-2010’, 30000,0,30),
+															(7,’Pihu', ‘Manager’, 41, ’26-11-2001’, 50000,10000,10),
+															(8,’Roman’, ‘Analyst’, 11, ’14-10-2002’, 20000,0,20),
+															(9,’Rihanna’, ‘Manager’, 41, ’18-02-2011’, 50000,10000,30),
+															(10,’shiikha’, ‘CEO’, 1, ’01-03-1996’, 100000,50000,10),
+															(11,’Vijay’, ‘Tech Lead’, 61, ’21-09-2003’, 70000,20000,20),
+															(12,’Renu’, ‘Tester’, 91, ’30-12-2015’, 15000,3000,30),
+															(13,’Mahesh’, ‘Chairman’, 7, ’26-08-1990’, 150000,80000,10),
+															(14,’Alok’, ‘President’, 3, ’05-10-2000’, 120000,60000,20),
+															(15,’Ishita’, ‘Senior Software Engineer’, 81, ’11-05-2007’, 45000,12000,30); 
+ 
+B.	UPDATE Employee set SAL= SAL * 1.10 where DEPTNO=10 and DEPTNO=20; 
+C.	UPDATE Employee set SAL= SAL * 1.10 and COMM=COMM * 1.02 where COMM!=0; 
+D.	UPDATE Employee set JOB= ‘Manager’ where EMPNO=15; 
+E.	DELETE from Employee where HIREDATE = ’26-11-2000’; 
+F.	Insert into Employee (EMPNO, ENAME, JOB, MGR, HIREDATE, SAL,COMM,DEPTNO) select * from Member where Max_Books_Allowed=110; 
+G.	Create table IF NOT EXISTS NewBook AS Select * from Books; 
+H.	SPOOL C:\Users\Vaibhav\Desktop\SQL.text 
+I.	Insert into Books (Book_No,Book_Name,Author_name,Cost,Category) values (1000,’MongoDB’, ‘Allen’,750,’Database’), 
+																			(1001,’Python 3’, ‘Magret’,1350,’AI’),
+																			(1002,’Angular 4’, ‘Google’,2750,’UI’), 
+																			(1003,’PL SQL-Ref’, ‘Scott Urman’,750,’Database’); 
+ 
+J.BEGIN TRANSACTION; 
+Insert into Employee values (36,’Chawla’, ‘Manager’, 41, ’26-06-2001’, 50000,10000,10),
+							(28,’Chauhan’, ‘Analyst’, 11, ’01-12-2011’, 20000,0,20),
+							(64,’Sita’, ‘Senior Analyst’, 21, ’15-11-2005’, 35000,8000,30),
+							(45,’Ram’, ‘Manager’, 41, ’08-07-2003’, 50000,10000,10),
+							(58,’Lakshman’, ‘HR Manager’, 51, ’11-01-2005’, 45000,11000,20); 
+ 
+K.	ROLLBACK; 
+ 
+L.	UPDATE Books set Cost=300 and Category=‘OracleDatabase’ where Book_No=1003; 
+ 
+M.	BEGIN TRANSACTION; 
+DELETE from Issue where Member_Id =1 and Issue_Date<’10–12-06’; 
+DELETE from Books where Category=‘RDBMS’ and Category=‘Database’; ROLLBACK; 
+ 
+N.	SPOOL C:\Users\Vaibhav\Desktop\SQL.text 
+

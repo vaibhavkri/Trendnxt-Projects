@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+<h4>
+
+Assignment 3:
+Build a simple slide show in JavaScript. Create a basic page in html that displays a single image.
+Add two buttons Previous and Next. These buttons should allow the user to move forward or
+backward. Have 6 images in total. When the user reaches the end (or beginning when clicking on
+the back button) of the slide show, the slide show should not wrap around to the beginning (or
+end). When at the beginning of the slide show, only the Next button should be
+visible. Conversely, when at the end, only the Previous button should be visible. 
+</h4>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.mySlides {display: none}
+img {vertical-align: middle;}
+
+
+
+.slideshow-container {
+  max-width: 500px;
+  position: relative;
+  margin: auto;
+}
+.prev, .next {
+  border: 2px solid black;
+  cursor: pointer;
+  position: absolute;
+  margin-top: -22px;
+  color: black;
+  font-weight: bold;
+  font-size: 20px;
+}.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+
+</style>
+</head>
+<body>
+
+<div class="slideshow-container">
+
+<div class="mySlides fade">
+ 
+  <img src="cr7.jpg" style="width:100%">
+	<h1>1. Cristiano Ronaldo</h1><br><br>
+</div>
+
+
+<div class="mySlides fade">
+ 
+  <img src="messi.jpg" style="width:100%">
+	<h1>2. Lionel Messi</h1><br><br>
+</div>
+ 
+<div class="mySlides fade">
+
+  <img src="dybala.jpg" style="width:100%">
+	<h1>3. Paulo Dybala</h1><br><br>
+</div>
+
+<div class="mySlides fade">
+
+   <img src="beckham.jpg" style="width:100%">
+	<h1>4. David Beckham</h1>
+	<br><br>
+</div>
+
+<div class="mySlides fade">
+
+  <img src="james.jpg" style="width:100%">
+	<h1>5. James Rodriguez</h1><br><br>
+</div>
+
+<div class="mySlides fade">
+
+  <img src="debruyne.jpg" style="width:100%">
+	<h1>6. Kevin DeBruyne</h1><br><br>
+</div>
+
+<a class="prev" onclick="plusSlides(-1)">Previous</a>
+<a class="next" onclick="plusSlides(1)">Next</a>
+
+</div>
+<br>
+
+
+
+<script>
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+}
+</script>
+
+</body>
+</html> 

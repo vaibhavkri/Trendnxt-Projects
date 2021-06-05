@@ -1,0 +1,2 @@
+•	Develop a UML diagram for Shopping Cart application
+•	Develop a UML diagram for Car Inventory

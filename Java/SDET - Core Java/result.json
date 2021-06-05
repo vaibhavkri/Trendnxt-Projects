@@ -1,0 +1,21 @@
+        {
+          "1": {
+            "Bangalore",
+            "Delhi",
+            "Mumbai",
+            "Kolkata"
+          },
+          "2": {
+            "count(city)": "899",
+            "sum(win_by_runs)": "5",
+            "min(season)": "1998",
+            "max(win_by_wickets)": "2"
+          },
+          "3": {
+            "winner": "Delhi",
+            "city": "Mumbai",
+            "team1": "Delhi Daredevils",
+            "team2": "Mumbai Indians"
+          },
+
+        }

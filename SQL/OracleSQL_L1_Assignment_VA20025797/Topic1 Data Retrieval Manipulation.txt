@@ -1,0 +1,46 @@
+Assignment : 1 
+
+A.	Select count(*), avg(SAL) from Employee where DEPTNO=20; 
+B.	Select ENAME, SAL, SAL*.10 PF from Employee; 
+C.	Select ENAME, JOB from Employee where MGR=null; 
+D.	Select ENAME, MGR , JOB, HIREDATE from Employee where JOB=‘Manager’; 
+E.	Select EMPNO, ENAME, SAL from Employee where MGR = 7369; 
+F.	Select * from Employee where JOB =‘Clerk’ OR ‘Trainer’; 
+G.	Select * from Employee where SAL>=10000 && SAL<=20000; 
+H.	Select * from Employee where COMM = null; 
+I.	Select ENAME from Employee where ENAME LIKE ‘H%’ OR ENAME LIKE ‘%H’; 
+J.	Select * from Employee ORDER BY SAL ASC; 
+K.	Select * from Employee where DEPTNO!=10 and DEPTNO!=20 and DEPTNO!=30; 
+L.	Select EMPNO, ENAME, SAL*.12 ANNUALSALARY from Employee where DEPTNO=10; 
+
+Assignment : 2 
+ 
+A.	Select * from Books where Author_name=‘Loni’ and Cost<600; 
+B.	Select * from Issue where Issue_Date!=null and Return_date=null; 
+C.	Select * from Issue where trunc(Issue_Date)>trunc(sysdate-30); 
+D.	Select * from Books where Cost>=500 and Cost<=750 and Category=‘Database’; 
+E.	Select * from Books where Category=’Science’ or Category=’Database’ or Category=’Fiction’ or Category=’Management’; 
+F.	Select * from Member ORDER BY Penalty_Amount DESC; 
+G.	Select * from Books ORDER BY Category ASC,Cost DESC; 
+H.	Select * from Books where Book_Name LIKE ‘%SQL%’; 
+I.	Select * from Member where Member_Name LIKE ‘R%I%’ OR Member_Name LIKE ‘G%I%’; 
+J.	Select initcap(Book_Name), upper(Author_name) from Books order by Book_Name desc; 
+K.	Select FORMAT(Issue_Date,’D’),FORMAT(Return_date,’D’) from Issue where Member_id=101; 
+L.	Select * from Member where Acc_Open_Date>=’01/01/2001’; 
+
+Assignment : 3 
+ 
+A.	Select MONTHS_BETWEEN ( Issue_Date, Return_date) from Issue; 
+B.	Select LENGTH(Member_Name) from Member; 
+C.	Select SUBSTRING(Membership_type,1,5) from Member; 
+D.	Select LAST_DAY(Issue_Date) from Issue; 
+E.	Select Book_Name from Books where Book_Name REGEXP ‘^l’; 
+F.	Select * from Member where Member_Name REGEXP ‘^r’; 
+G.	Select Book_Name from Books where Book_Name LIKE ‘%SQL%’; 
+H.	Select REGEXP_REPLACE(Book_Name,’Mastering Monogo DB’,’Advanced Mongo DB’) from Books; 
+I.	Select Book_Name where Book_Name LIKE ‘%G%’ in REGEXP_SUBSTR(Book_Name,1,5) from Books; 
+J.	Select Lib_Issue_Id, Issue_Date, Return_date, DATEDIFF('dd', Issue_Date,Return_date) from Issue; 
+K.	Select Penalty_Amount from Member; 
+L.	Select * from Member order by Acc_Open_Date asc; 
+ 
+ 

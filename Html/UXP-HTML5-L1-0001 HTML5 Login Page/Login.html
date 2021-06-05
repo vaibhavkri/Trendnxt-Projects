@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>HTML5 Login Registration Form</title>
+       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        
+        <!--function on form submittion-->
+        
+        <script type="text/javascript">
+         function onSubmit(email){
+             alert("Password reset link has been sent to your registered email: "+email);
+         }
+        </script>
+       
+        <style>
+            body{
+                font-family:Helvetica;
+            }
+            .container-fluid{
+                text-align: center;
+                height: 70px;
+                background-color:darkgrey;
+                color: whitesmoke;     
+                }
+            
+            .container{
+                border: 2px solid black;
+                margin-top:10px;
+              
+                padding: 10px 10px 20px 10px;
+            }
+            .col-md-12{
+                background-color:#ddd;
+                height: 100%;
+                border: 2px solid black;  
+            }
+            
+            .col-sm-12 small{
+                color:black; 
+            }
+            
+            .col-sm-12{
+                margin-bottom: 20px;
+                padding-left: 30px;
+            }
+            
+            .col-sm-6 p{
+                font-weight: bold;
+                font-size:18px;
+                margin-bottom: 30px;   
+            }
+            
+            .col-sm-6{
+                height:270px;
+                padding-top: 20px;
+                padding-left: 30px;
+                margin-bottom: 50px; 
+            }
+            
+            .btn-default{
+                background-color:#3c3c3c;
+                color: white;
+                font-weight: bold;
+                padding:3px 30px;
+                margin-top: 20px;
+                border-radius: 5px;
+            }
+            
+            #email{
+                width:70%;
+            }
+            
+            .fb-button{
+               background-color: #3B5998;
+                color: white;
+                width:70%;
+                display: block;
+                height: 55px;
+                border-radius: 5px;
+                font-size: 18px;
+                font-weight:700;
+                padding-top: 10px;
+                padding-left: 10px;   
+            }
+            
+            .fa-facebook-square{
+                 font-size: 30px;
+                 padding-right: 60px;
+                 text-decoration:none;
+                 color: aliceblue;
+                 display: inline-block;
+            }
+            
+            .fb-button:hover{
+                text-decoration:none;
+                color: aliceblue;
+            }
+            
+            .hr-or{
+              display: none;
+            }
+            
+            .vr-or{
+                position: absolute;
+                left:-25px;
+                top: 100px;
+                height: 35x;
+                width: 50px;
+                font-size: 18px;
+                line-height: 35px;
+                background-color: white;
+                text-align: center;
+                display: block;
+                font-weight: bold;
+            }
+            
+            .vr-line{
+                border-left: 1px solid black;
+                padding-left:50px;
+            }
+            
+        /*-- styling for small screen*/
+            
+        @media only screen and (max-width: 770px) {
+            
+            .container{
+                margin: 10px;
+            }
+            
+           .col-sm-12{
+                padding-left: 20px;
+            }
+            
+            .hr-or{
+              font-size:18px;
+              margin-bottom: 20px;
+              font-weight: bold;
+              display: block;  
+            }
+            
+            .vr-or{
+              display:none;
+            }
+
+            .col-sm-6{
+              padding-left: 20px; 
+              height:200px;
+              margin-bottom:0px;
+            }
+            
+            .vr-line{
+             border-left: 0px;  
+            }
+            
+            .vr-line{
+             margin-bottom: 30px;
+            }
+            
+        }
+        </style>
+    </head>
+    <body>
+        <header class="container-fluid">
+        <h1>HTML5 Login Form</h1>
+        </header>
+        <div class="container">
+            
+          <div class="col-md-12" id="mainBody">
+              
+              <div class="row">
+              <div class="col-sm-12">
+              <h3><strong>Login</strong><small> or <a href="#" class="text-muted"><u>Register a new Account</u></a></small></h3>
+              </div>
+              </div>
+              <div class="row">
+                   <div class="col-sm-6">
+                      <p>Forgot password?</p>
+                       <form onsubmit="onSubmit(email.value)">
+                            <div class="form-group">
+                              <label for="email">Email ID *</label>
+                              <input type="email" class="form-control" id="email" placeholder="****@****.com" required>
+                            </div>
+                            <button type="submit" class="btn btn-default btn-xs">Email Password</button>  
+                       </form>  
+                   </div>
+                  <div class="col-sm-6 vr-line">
+                      <!--vertical OR dispaly-->
+                          <div class="vr-or">
+                          OR
+                          </div>
+                      <!--horizontal OR dispaly-->
+                          <div class="hr-or text-center">
+                          OR
+                          </div>
+                      
+                       <p>Have a Facebook account?</p>
+                          <div>
+                              <a href="https://www.facebook.com" target="_self" class="fb-button">
+                              <i class="fa fa-facebook-square"></i>Login with Facebook
+                             </a>
+                          </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+    </body>
+</html>

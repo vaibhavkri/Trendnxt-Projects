@@ -1,0 +1,33 @@
+Assignment 1 
+ 
+SELECT EMPLOYEE_ID,FIRST_NAME,LAST_NAME,
+		EMAIL,PHONE_NUMBER,HIRE_DATE,
+		JOB_ID,SALARY,COMMISSION_PCT,
+		MANAGER_ID,DEPARTMENT_ID, LEVEL FROM EMPLOYEES START WITH MANAGER_ID = null 
+										CONNECT BY PRIOR EMPLOYEE_ID=MANAGER_ID  
+										ORDER SIBLINGS BY LAST_NAME; 
+
+Assignment 2 
+ 
+CREATE DIRECTORY def_dir1 as 'C:\Users\VA20025797\Desktop\doc\'; 
+ 
+GRANT WRITE ON DIRECTORY def_dir1 TO CPS_OWNER;  
+CREATE TABLE emp_load (employee_number NUMBER(5,0), employee_dob  VARCHAR(20), employee_name VARCHAR(20), employee_hire_date DATE)  
+ 
+ORGANIZATION EXTERNAL(TYPE ORACLE_LOADER DEFAULT DIRECTORY def_dir1 ACCESS PARAMETERS (RECORDS DELIMITED BY NEWLINE FIELDS (employee_number NUMBER(2,0), employee_dob VARCHAR(20), employee_name CHAR(18), employee_hire_date CHAR(10) date_format 
+DATE mask "mm/dd/yyyy")) LOCATION ('vaibhav.csv’) ); 
+										
+										
+Assignment 3 
+ 
+Create table SAL_HISTORY(empid NUMBER, hiredate DATE, salary NUMBER): 
+ 
+Create table MGR_HISTORY(empid NUMBER, mgr_id NUMBER, hiredate DATE); 
+ 
+INSERT ALL INTO SAL_HISTORY (empid NUMBER, hiredate DATE, salary NUMBER) values (Employee.EMPNO, Employee.HIREDATE, Employee.SAL) 
+ 
+INTO MGR_HISTORY(empid NUMBER, mgr_id NUMBER, hiredate DATE) values 
+(Employee.EMPNO, Employee.MGR, Employee.HIREDATE) 
+ 
+SELECT * FROM Employee; 
+										

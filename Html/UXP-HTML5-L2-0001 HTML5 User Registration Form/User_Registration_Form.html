@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>UXP-HTML5-L2-0001</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  
+  <script type="text/javascript">
+         
+         function generateCaptcha()
+         {
+             var arr = new Array('a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z');
+             var i;
+             
+             for (i=0;i<5;i++){
+               var a =arr[Math.floor(Math.random()*arr.length)];
+               var b =arr[Math.floor(Math.random()*arr.length)];
+               var c =arr[Math.floor(Math.random()*arr.length)];
+               var d =arr[Math.floor(Math.random()*arr.length)];
+               var e =arr[Math.floor(Math.random()*arr.length)];
+              }
+            var captcha = a + '' + b + '' + '' + c + '' + d + '' + e;
+            document.getElementById("captcha").defaultValue  = captcha
+          }
+         
+          function CheckCaptcha(){
+              var captcha = trimSpaces(document.getElementById('captcha').value);
+              var verify = trimSpaces(document.getElementById('verify').value);
+              var checkbox = document.getElementById("checkbox");
+              var pwd=document.getElementById('password').value;
+              var pwd1=document.getElementById('cnfrmpassword').value;
+              var fname=document.getElementById('fname').value;
+              var mob=document.getElementById('mob').value;
+              var member=document.getElementById('member').value;
+              var gender=document.getElementById('gender').value;
+              var email=document.getElementById('email').value;
+              var mem=document.getElementById('member');
+              var gen=document.getElementById('gender');
+              
+              if(mem.selectedIndex < 1)
+              {
+               alert("Please Select the member Type");
+                   return false;
+              }
+              else if (email==""){
+                         alert("Please Enter the Email");
+                   return false;
+              }
+              else if (pwd==""){
+                         alert("Please Enter the Password");
+                   return false;
+              }
+              else if (pwd1==""){
+                         alert("Please Enter the Confirm Password");
+                   return false;
+              }
+               else if (fname==""){
+                         alert("Please Enter the First Name");
+                   return false;
+              }
+               else if (mob==""){
+                         alert("Please Enter the Mobile No.");
+                   return false;
+              }
+               else if(gen.selectedIndex < 1)
+              {
+               alert("Please select the gender.");
+                   return false;
+              }
+              else if (verify==""){
+                         alert("Please enter the captcha");
+                   return false;
+              }
+             
+              else if(pwd!=pwd1)
+              {
+                   alert("Password not matched");
+                   return false;
+              }
+                  else if(mob.length!=10)
+              {
+                   alert("Mobile Phone Number length should be equal to 10.");
+                   return false;
+              }
+              else if (captcha!=verify){
+                         alert("Captcha not matched");
+                   return false;
+              }
+              else if(!checkbox.checked)
+              {
+              			 alert("Please Accept the T&C.");
+                   return false;
+              }
+              return true;
+          }
+          
+          function trimSpaces(string){
+            return string.split(' ').join('');
+          }
+      </script>    
+      
+<style>
+
+  input[type=text],input[type=email],input[type=password],input[type=number], select, textarea {
+  width: 20%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+  background-color:#D3D3D3;
+  color:black;
+  border-color:grey;
+}
+
+label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+  
+}
+
+input[type=submit],input[type=reset] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: right;
+}
+
+input[type=submit]:hover,input[type=reset]:hover {
+  background-color: #45a049;
+}
+
+.container {
+      padding: 20px;
+}
+
+::placeholder {
+  color: black;
+  
+}
+
+
+.col-25 {
+  float: left;
+  width: 25%;
+  margin-top: 6px;
+}
+
+.col-80 {
+  float: left;
+  width: 80%;
+  margin-top: 6px;
+  
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .col-25, .col-80, input[type=submit] {
+    width: 100%;
+    margin-top: 0;
+  }
+}
+</style>
+</head>
+
+
+<body onload="generateCaptcha();">
+<nav class="navbar navbar-inverse" style="background-color: #D3D3D3;">
+  	<div class="container-fluid">
+        <form class="navbar-form navbar-left" action="#" >
+    		<span class="navbar-text" style="margin-top: 30px;color:black;">
+					Already Registered?
+        	</span>
+      		<div class="form-group"  style="margin-left:100px;">
+      			<p>Email ID</p>
+        		<input type="email" class="form-control"  name="email" style="width:350px;" required>
+        	</div>
+      		<div class="form-group" style="margin-left:150px;">  
+            	<p>Password</p>
+         		<input type="password" class="form-control"  name="password" required>
+      		</div>
+  
+      		<button type="submit" class="btn btn-default" style="background-color: black; color:white; margin-top: 30px;margin-left:100px;width:75px;">
+            	GO
+            </button>
+   
+   		 </form>
+   </div>
+</nav>
+
+&nbsp;
+
+<div style="width: 100%; height: 20px; border-bottom: 1px solid black; text-align: center">
+	  <span style="font-size: 20px; background-color: #F3F5F6;">
+    					OR
+  	</span>
+</div>
+
+<div class="container">
+  <form action="success.html" onsubmit="return CheckCaptcha()">
+  			<div class="row">
+      			<div class="col-25">
+        			<label for="member">Registered As*</label>
+        	   </div>
+    		</div>
+            
+     		<div class="row">
+      			<div class="col-80">
+     				<select required id="member" name="member" >
+          				<option value="none">Select Member Type</option>
+          				<option value="permanent">Permanent</option>
+          				<option value="temporary">Temporary</option>
+     				</select>
+      			</div>
+    		</div>
+            
+     		<div class="row">
+      			<div class="col-25">
+        			<label for="email">Email ID*</label>
+                </div>
+    		</div>
+            
+     		<div class="row">
+      			<div class="col-80">
+    				<input type="email" id="email" name="email" placeholder="****@****.com" >
+      			</div>
+    		</div>
+    
+     		<div class="row">
+      			<div class="col-25">
+        			<label for="password">Password*</label>
+     	        </div>
+      			<div class="col-25"  >
+        			<label for="cnfrmpassword" style="margin-left:25px;">Confirm Password</label>
+       	        </div>
+    		</div>
+            
+     		<div class="row">
+      			<div class="col-80">
+   	 				<input type="password" id="password" name="password" >
+       				<input type="password" id="cnfrmpassword" name="cnfrmpassword" style="margin-left:125px;" >
+      			</div>
+          	</div>
+    
+   			<div class="row">
+      			<div class="col-25">
+        			<label for="fname">Full Name*</label>
+       	      	</div>
+    		</div>
+            
+     		<div class="row">
+      			<div class="col-80">
+    				<input type="text" id="fname" name="fname" placeholder="First Name" >
+    				<input type="text" id="mname" name="mname" placeholder="Midde Name" style="margin-left:125px;" >
+    				<input type="text" id="lname" name="lname" placeholder="Last Name" style="margin-left:170px;" >
+      			</div>
+    		</div>
+    
+     		<div class="row">
+      			<div class="col-25">
+        			<label for="dname">Display Name</label>
+             	</div>
+      			<div class="col-25"  >
+        			<label for="mob" style="margin-left:25px;">Mobile Number*</label>
+            	</div>
+       			<div class="col-25"  >
+        			<label for="gender" style="margin-left:95px;">Gender*</label>
+           		</div>
+    		</div>
+            
+     		<div class="row">
+      			<div class="col-80">
+    				<input type="text" id="dname" name="dname" >
+     				<input type="number" id="mob" name="mob" style="margin-left:125px;" >
+     				<select id="gender" name="gender" style="margin-left:170px;" >
+          				<option value="none"></option>
+          				<option value="male">Male</option>
+          				<option value="female">Female</option>
+     				</select>
+      			</div>
+    		</div>
+    
+     		<div class="row">
+      			<div class="col-25">
+        			<label for="captcha">Captcha*</label>
+       	      	</div>
+       			<div class="col-25">
+        			<label for="verify" style="margin-left:25px;">Enter the Captcha Code Here</label>
+        	    </div>
+    		</div>
+    
+    		<div class="row">
+      			<div class="col-80">
+    				<input type="text" id="captcha" name="captcha" readonly="readonly">
+        			<input type="text" id="verify" name="verify" style="margin-left:125px;">
+      			</div>
+    		</div>
+            
+  			<label>
+            	<input type="checkbox" id="checkbox" name="remember" style="margin-bottom:15px">I have read,understood,and accepeted the rules for membership.
+            </label>
+ 
+ 			<div class="row">
+ 				<input type="submit" value="Register" style="margin-left:120px;width:80px;height:30px;background-color:grey;color:black;" >
+       			<input type="reset" value="Cancel" style="margin-left:120px;width:80px;height:30px;background-color:grey;color:black;">
+    		</div>
+  </form>
+</div>
+                 
+</body>
+</html>

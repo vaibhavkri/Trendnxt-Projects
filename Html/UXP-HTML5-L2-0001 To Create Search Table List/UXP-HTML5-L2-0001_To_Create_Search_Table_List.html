@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Search Table List</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src = "https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+  <script>
+  	$(document).ready(function(){
+	 $("#link1").hide();
+     $("#link2").hide();
+
+		$("#check_1").click(function() {
+           check_checkbox1();
+		});
+		function check_checkbox1(){
+			var isChecked = $('#check_1').is(':checked');
+			if (!isChecked){
+				$('#link1').hide();
+			}else{
+				$('#link1').show();
+			}
+		}
+
+		$("#check_2").click(function() {
+				   check_checkbox2();
+				});
+				function check_checkbox2(){
+					var isChecked = $('#check_2').is(':checked');
+					if (!isChecked){
+						$('#link2').hide();
+					}else{
+						$('#link2').show();
+					}
+				}
+
+		$("#check_3").click(function() {
+				   check_checkbox3();
+				});
+				function check_checkbox3(){
+					var isChecked = $('#check_3').is(':checked');
+					if (!isChecked){
+						$('#link').hide();
+					}else{
+						$('#link').show();
+					}
+				}
+		$("#sortBook").click(function() {
+			var table = $('#sortMe').DataTable();
+			 
+			var data = table
+				.column( 3 )
+				.data()
+				.sort();
+				
+			$('#sortMe_length').hide();
+			$('#sortMe_filter').hide();
+			$('#sortMe_info').hide();
+			$('#sortMe_paginate').hide();
+		});
+	});
+  </script>
+</head>
+<body>
+
+	<div class = "container" style= "background-color: white;border: 2px solid black; padding: 10px 10px 10px 10px ;">
+	<div class = "jumbotron"  style= "background-color: #dddddd; padding: 10px 10px 10px 10px ;">
+
+		<nav class="navbar navbar-default">
+		  <div class="container-fluid">
+			<ul class="nav navbar-nav">
+			  <li><a href="#">ALL BOOKS</a></li>
+			  <li class="active"><a href="#">Books & E Books</a></li>
+			  <li><a href="#">Magazine & Journals</a></li>
+			  <li><a href="#">Media</a></li>
+			</ul>
+		  </div>
+		</nav>
+
+		<form action="/action_page.php">
+			  <div class = "row">
+				<div class = "col-sm-10">
+					<input type="text" class="form-control" style= "background-color: #dddddd;" placeholder="Search" name="search">
+				</div>
+				<div class = "col-sm-2">
+					<button class="btn btn-default" type="submit" style="float:right; background-color: grey; color: white; border-radius:4px 4px 4px 4px;width:100px;">Search
+					</button>
+				</div>
+			  </div>
+			  <div class = "row">
+			  <div class = "col-sm-4">
+				<br/><a href="#"><u>Advance Search</u></a>
+			  </div>
+			  <div class = "col-sm-8">
+			  </div>
+			  </div>
+		</form>
+	</div>
+	<hr color = "grey">
+	<div class = "row">
+		<div class = "col-sm-12">
+		<strong style = "font-size:20px">Search Result</strong>
+		</div>
+	</div>
+	<div class = "row">
+		<div class = "col-sm-8">
+		  <ul class="pagination">
+			<li><a href="#"> &lt;&lt; Previous </a></li>
+			<li><a href="#"> Next &gt;&gt; </a></li>
+		  </ul>
+		</div>
+		<div class="col-sm-2">
+			<input id = "page" list="pages_per_page" placeholder = "100 per page" style = "background-color: #dddddd;" size = "15px;">
+				<datalist id="pages_per_page">
+				  <option value="50 per page">
+				  <option value="150 per page">
+				</datalist>
+		</div>
+		<div class="col-sm-2">
+			<input id = "sort" list="page_sort" placeholder = "Sort" style = "background-color: #dddddd;" size = "15px;">
+				<datalist id="page_sort">
+				  <option value="A -> Z">
+				  <option value="Z -> A">
+				</datalist>
+		</div>	
+	</div>  
+
+  <table class="table" id = "sortMe">
+    <thead>
+      <tr>
+	    <th style = "color:white;">img</th>
+        <th>Description</th>
+        <th>Select</th>
+        <th><strong><a id = "sortBook">Type of book</a></strong></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><img src = "Let_us_c.jpg" style = "width:130px;height:150px; margin:10px;"/></td>
+        <td><b>Let Us C e13 <sup>th</sup> Edition By Yashawant Kanetkar. BPS Publications. Copyright 2007 by The BPS Companies. All rights reserved.</b></td>
+        <td><input type = "checkbox" id = "check_1"></br>
+		<a href = "#" id = "link1">Read|Download</a></td>
+		<td style = "text-align: center;">C</td>
+      </tr>
+
+      <tr>
+        <td><img src = "cpp.jpg" style = "width:130px;height:150px; margin:10px;"/></td>
+        <td><b>Let Us C++ e2 <sup>nd</sup> Edition By Yashawant Kanetkar. BPS Publications. Copyright 2007 by The BPS Companies. All rights reserved.</b></td>
+        <td><input type = "checkbox" id = "check_2"></br>
+		<a href = "#" id = "link2">Read|Download</a></td>
+		<td style = "text-align: center;">CPP</td>
+      </tr>
+
+      <tr>
+        <td><img src = "java.jpeg" style = "width:130px;height:150px; margin:10px;"/></td>
+        <td><b>Java The Complete Reference,Seventh Edition. Copyright 2007 by The McGraw-Hill Companies. All rights reserved.</b></td>
+        <td><input type = "checkbox" id = "check_3" checked><br/>
+		<a href = "#" id = "link">Read|Download</a></td>
+		<td style = "text-align: center;">JAVA</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <div class = "row">
+		<div class = "col-sm-3">
+		</div>
+		<div class = "col-sm-6">
+		</div>
+		<div class = "col-sm-3">
+		<button type="button" id="cancel" style="background-color: grey; color: white; border-radius:4px 4px 4px 4px;width:100px;">Cancel</button>
+		<button type="button" id="reserve" style="background-color: black; color: white;border-radius:4px 4px 4px 4px;margin-left:8px;width:100px;">Reserve</button>
+		</div>
+	</div>
+<br/><br/>
+
+	<footer style="height:80px;padding:8px;"><strong style = "font-size:17px">Speaker Notes </strong><br/><br/>
+	<div class = "row">
+		<div class = "col-sm-12">
+		  <ul class="pagination">
+			<li><a>
+			  <span class="glyphicon glyphicon-triangle-left"></span>
+			</a></li>
+			<li><a href="#"> <img src = "Let_us_c.jpg" style = "width:100px;height:100px"/>simple and approachable style </a></li>
+			<li><a href="#"> <img src = "cpp.jpg" style = "width:100px;height:100px"/>C++ in Yashavant Kanetkar's inimitable style. </a></li>
+			<li><a href="#"> <img src = "java.jpeg" style = "width:100px;height:100px"/>simple and approachable style </a></li>
+			<li><a>
+			  <span class="glyphicon glyphicon-triangle-right"></span>
+			</a></li>
+		  </ul> 
+		 </div>
+	</div>
+	</footer>
+	</div>
+</body>
+</html>

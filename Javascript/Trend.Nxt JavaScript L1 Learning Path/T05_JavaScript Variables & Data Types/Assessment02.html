@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script type="text/javascript">
+      function calArea(){
+        var halfPerimeter;
+        var side1, side2, side3;
+        var area;
+        side1 = Number(document.getElementById('a').value);
+        side2 = Number(document.getElementById('b').value);
+        side3 = Number(document.getElementById('c').value);
+        halfPerimeter = (side1 + side2 + side3)/2;
+        area = Math.sqrt(halfPerimeter*(halfPerimeter-side1)*(halfPerimeter-side2)*(halfPerimeter-side3));
+        document.getElementById('showarea').innerHTML = area.toFixed(3);
+      }
+    </script>
+  </head>
+  <body>
+    <h2>Area of a Triangle</h2>
+    <br>
+    <br>
+    <h3>Enter the sides
+      <br> a = <input type="number" id = "a" name="side_1" value="">
+      <br> b = <input type="number" id = "b" name="side_2" value="">
+      <br> c = <input type="number" id = "c" name="side_3" value="">
+      <br><br><input type="button" name="Cal" value="Calculate the area" onclick = calArea()>
+    </h3>
+    <br>
+    <br><b>Area:</b> <p id = "showarea"></p>
+  </body>
+</html>

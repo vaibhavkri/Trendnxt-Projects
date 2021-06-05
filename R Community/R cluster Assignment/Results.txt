@@ -1,0 +1,15 @@
+Obtained Accuracy
+-----------------
+Hierarchical Clustering:
+hcut Beitou Xinyi Zhongshan
+   1     18     0         0
+   2      0     0        71
+   3      0    13         0
+Accuracy = 100%
+-----------------
+K Means Clustering:
+    Beitou Xinyi Zhongshan
+  1     18     0         0
+  2      0     0        70
+  3      0    13         1
+Accuracy = 99.01%

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JavaScript User Login Form</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script>
+  function checkEmail()
+{
+var email = document.getElementById('email').value;
+var patt = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+ if (patt.test(email))
+  {
+  }else{
+		document.getElementById('errorMsg').innerHTML = 'Please enter valid email ID (example: ****@****.com)';
+	  }
+}
+  </script>
+  
+
+<style>
+input {
+    background-color: #dddddd;
+}
+
+.tr1 {
+    background-color: #dddddd;
+}
+
+.button2 {
+    background-color: #000000; /* black */
+    border: none;
+    color: white;
+    padding: 5px 25px;
+}
+button {
+    background-image: url("fb.png");
+	background-repeat: no-repeat;
+    padding: 12px 160px 15px 0px;
+}
+img{
+position: absolute;
+    left: -25px;
+}
+</style>
+</head>
+<body>
+<div class = "container">
+<div class = "jumbotron"  style= "background-color: white;border: 3px solid black; padding: 10px 10px 10px 10px ;">
+
+
+<form action="#" class = "tr1" style = "padding: 20px 10px 80px 10px;">
+  <div class = "row">
+	<div class = "col-sm-12" style = "margin-top:25px;"><strong style = "font-size:25px;">Login</strong> <a href="https://www.google.co.in/"><u>or Register a new Account</u></a></div>
+  </div>
+
+  <div class = "row" >
+	    <br/>
+		<div class="form-group dropdown col-sm-6" style = "border-right:1px solid black"><strong>Forgot password?</strong><br/><br/>
+			<label for="email">Email ID<sup>*</sup></label><br/>
+			<input type="text" class="input" id="email" placeholder = "****@****.com">
+
+			<p id = "errorMsg" style = "color : red;font-size:15px;"></p><br/>
+            <button type="submit" class="button2 btn btn-default dropdown-toggle" onclick = "checkEmail();">Email Password</button>
+		</div>
+
+		<div class="form-group col-sm-6"><strong style = "margin:30px">Have a Facebook account?</strong><br/><br/>
+		<img src = "or.png" ></img><button type="submit" class="button" style = "margin:30px"></button>
+		</div>
+  </div>
+</form>
+</div></div>
+</body>
+</html>

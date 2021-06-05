@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script type="text/javascript">
+    function knowSign(){
+        var a, b, c, product = 1;
+        a = parseFloat(document.getElementById("num1").value);
+        b = parseFloat(document.getElementById("num2").value);
+        c = parseFloat(document.getElementById("num3").value);
+
+        product = a*b*c;
+
+        if(product < 0){
+          document.getElementById("show").innerHTML = "The product is -ve";}
+        else if(product > 0){
+          document.getElementById("show").innerHTML = "The product is +ve";}
+        else{
+          document.getElementById("show").innerHTML = "No sign!";}
+    }
+    </script>
+  </head>
+  <body>
+    Enter 1st number: <input type="text" id = "num1" name="" value="">
+    <br><br>Enter 2nd number: <input type="text" id = "num2" name="" value="">
+    <br><br>Enter 3rd number: <input type="text" id = "num3" name="" value="">
+    <br><br><input type="button" name="name" value="Let's know the sign of the product" onclick="knowSign()">
+    <br><p id = "show"></p>
+  </body>
+</htm

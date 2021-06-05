@@ -1,0 +1,15 @@
+1.Perform an analysis of variance to determine whether differences in PlantGrowth (as measured by weight of batch) between the three groups are statistically significant.
+use PlantGrowth dataset in R.
+2. The dataset gives data for a sample of 20 bottles of soft drink taken from a filling line. The dataset contains one variable named Volume, which gives the volume of liquid in millilitres for each of the bottles.
+
+The bottle filling volume is believed to follow a normal distribution with a mean of 500 milliliters and a standard deviation of 25 milliliters. Suppose that you wish to use a one-sample Kolmogorov-Smirnov test to determine whether the data is consistent with this theory. The test has the null hypothesis that the bottles volumes are drawn from the described distribution, and the alternative hypothesis that they are not. A significance level of 0.05 will be used for the test.
+
+Check for any evidence that the bottle volumes are not drawn from the described normal distribution.
+
+3.Suppose that a fair die is rolled 10 times. What is the probability of throwing exactly two sixes?
+
+4.The number of lobster ordered in a restaurant on a given day is known to follow a Poisson distribution with a mean of 20. What is the probability that exactly eighteen lobsters will be ordered tomorrow?
+
+5. using scale function normalize airquality dataset using Min–max normalization
+
+6.using scale function normalize airquality dataset using Z-score Standardization

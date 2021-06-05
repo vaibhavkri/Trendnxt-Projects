@@ -1,0 +1,12 @@
+1.install SQLDf package and
+Select the rows from iris dataset where sepal length > 2.5
+and store that in subiris data frame
+
+2.Calculate group wise mean from iris data and perform same using R base counterpart aggregation
+
+3.Create dept dataframe and emp dataframe and perform inner , leftouter,RightOuter and
+FullOuter Joins using SQLDF
+
+4.Perform above exercise using dplyr package functions
+
+5.Perform above exercises using dataframe operations

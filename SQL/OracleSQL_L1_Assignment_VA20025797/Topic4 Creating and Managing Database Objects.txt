@@ -1,0 +1,44 @@
+Assignment : 1 
+
+A.	Create table IF NOT EXISTS empcopy AS Select * from Employee; 
+B.	Create table IF NOT EXISTS deptcopy AS select * from Department limit 0; 
+C.	Create INDEX ind_book_name ON Books (Book_Name); 
+D.	Create INDEX ind_book ON Issue (Member_Id , Book_No); 
+E.	Alter table Member MODIFY Member_Name Varchar(48); 
+F.	Alter table Issue ADD Reference Char(30); 
+G.	Alter table Issue RENAME  TO Lib_Issue; 
+H.	Alter table Issue DROP Reference; 
+I.	Alter table Member ADD CONSTRAINT my_check_books  CHECK (Max_Books_Allowed < 100) ADD CONSTRAINT my_check_penalty CHECK(Penalty_Amount <= 1000); 
+J.	Create SEQUENCE seq_1 start with 1; 
+      Create OR Replace TRIGGER trig_1  
+	BEFORE Insert ON Member  
+	FOR EACH ROW 
+	BEGIN 
+		Select seq_1.NEXTVAL 
+		Into   :new.Member_Id 
+		From   dual; 
+	END; 
+ 
+	Create SEQUENCE seq_2 start with 1; 
+		Create OR Replace TRIGGER trig_2  
+		BEFORE Insert ON Supplier 
+		FOR EACH ROW 
+	BEGIN 
+		Select seq_2.NEXTVAL 
+		Into   :new.SupplierId 
+			From   dual; 
+	END; 
+ 
+K.	Create SEQUENCE no_seq start with 100 increment by 2 minvalue 100 maxvalue 200 cycle; 
+L.	DROP SEQUENCE no_seq; 
+     DROP SEQUENCE seq_2; 
+     DROP SEQUENCE seq_1; 
+M.	Create SEQUENCE book_seq start with 101 increment by 1 minvalue 101 maxvalue 1000 nocycle; 
+N.	Create SEQUENCE member_seq start with 1 increment by 1 minvalue 1 maxvalue 100 nocycle; 
+O.	DROP SEQUENCE book_seq; 
+     DROP SEQUENCE member_2; 
+ 
+ 
+ 
+ 
+ 

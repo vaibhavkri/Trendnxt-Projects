@@ -1,0 +1,9 @@
+<?xml version="1.0" ?>
+<testresult>
+ <testno1>Passed</testno1>
+ <testno2>Failed</testno2>
+ <testno3>Failed</testno3>
+ <testpassed>1</testpassed>
+ <testfailed>2</testfailed>
+ <testerror>0</testerror>
+</testresult>

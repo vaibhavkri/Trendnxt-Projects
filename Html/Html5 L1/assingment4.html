@@ -1,0 +1,61 @@
+<!Doctype html>
+<html>
+	<head>
+		<title>BCCI - Board of Control for Cricket in India</title>
+		<script>
+				var oneX = 15;
+				var oneY = 1;
+			window.onload = function(){
+				var myCanvas = document.getElementById("myCanvas");
+				var context = myCanvas.getContext("2d");
+				var w = (myCanvas.width)-5;
+				var h = (myCanvas.height)-5;
+				console.log(w);
+				context.beginPath();
+				context.moveTo(1, h-0);
+				context.lineTo(w, h-0);
+				context.moveTo(1, h-0);
+				context.lineTo(1, h-h);
+				context.stroke();
+
+				context.strokeStyle = "black";
+				context.moveTo(getXPixels(0), h-getYPixels(0));
+				context.fillRect(getXPixels(0), h-getYPixels(0)-5, 5, 5);
+				context.lineTo(getXPixels(5), h-getYPixels(40));
+				context.fillRect(getXPixels(5), h-getYPixels(40)-5, 5, 5);
+				context.lineTo(getXPixels(10), h-getYPixels(75));
+				context.fillRect(getXPixels(10), h-getYPixels(75)-5, 5, 5);
+				context.lineTo(getXPixels(15), h-getYPixels(140));
+				context.fillRect(getXPixels(15), h-getYPixels(140)-5, 5, 5);
+				context.stroke();
+				console.log("drawing success.");
+				}
+			function getXPixels(x){
+				return x*oneX;
+			}
+			function getYPixels(y){
+				return y*oneY;
+			}
+		</script>
+		<style>
+			#title{
+				text-align:center;
+				padding:20px;
+			}
+			
+			#content{
+				margin-left:20px;
+			}
+		</style>
+	</head>
+	<body>
+		<header>
+			<div><h1 id='title'>Batting Statisticks Portal</p></h1>
+		</header>
+		<div id='content'>
+		<h1>Batting Statisticks - India.</h1>
+		<p>batting statistics of the Indian team for a T20 cricket match</p>
+		<canvas id="myCanvas" width="500px" height="300px"></canvas>
+		</div>
+	</body>
+</html>

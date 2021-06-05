@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>Message</p>
+
+<button onclick="myFunction()">Encrypt</button>
+
+<p id="Encrypt"></p>
+
+<script>
+function myFunction() {
+	 
+var url = 'https://getbootstrap.com/docs/4.1/content/images/';
+var encodedUrl = encodeURIComponent(url);
+document.getElementById("Encrypt").innerHTML = encodedUrl;
+}
+</script>
+
+</body>
+</html>

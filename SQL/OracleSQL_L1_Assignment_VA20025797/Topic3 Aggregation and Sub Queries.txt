@@ -1,0 +1,45 @@
+Assignment : 1 
+ 
+A.	Select COUNT(EMPNO) from Employee; 
+B.	Select COUNT(JOB) from Employee; 
+C.	Select SUM(SAL) from Employee; 
+D.	Select MAX(SAL),MIN(SAL),AVG(SAL) from Employee; 
+E.	Select MAX(SAL) from Employee where JOB=‘Salesman’; 
+F.	Select VehDriver , DriverCity from Shipment s join Vehicle v on v.VehNo=s.VehicleNo  join Customer c on s.CustId = c.CustId where CustIncome>1200000; 
+G.	Select CustName, CustIncome from Customer  c join Shipment s  on c.CustId = s.CustId join Vehicle v on v.VehNo=s.VehicleNo where VehDriver=‘Baskar’; 
+H.	Select CustName, CustId from Customer where not exists (Select VehNo from Vehicle where not exists(Select * from Shipment where Shipment.VehicleNo= Vehicle.VehNo and 
+Shipment.CustId= Customer.CustId)) 
+I.	Select CustName, CustId from Customer c join Shipment s on c.CustId = s.CustId where 
+CustIncome>500000 and (ShipWeight>100 or ShipDestination=‘NewDelhi’);  
+J.	Select VehNo , VehDriver  from Vehicle v join Shipment s on v.VehNo=s.VehicleNo where 
+(Select MAX (mycount)  	 
+from (Select ShipId,COUNT(ShipId) mycount from Shipment GROUP BY ShipId));
+
+Assignment : 2 
+ 
+A.	Select COUNT(*) from Member; 
+B.	Select COUNT(Book_No) from Issue; 
+C.	Select AVG(Fees_paid) from Member; 
+D.	(Select Book_No from Books ) minus (Select Book_No from Issue); 
+E.	Select Member_Id, COUNT(Book_No) from Issue group by Member_Id having COUNT(Book_No )>=1; 
+F.	Select Member_Id,Member_Name from Member m join Issue i on m.Member_Id=i.Member_Id where ( Select MAX (mycount) , MIN(mycount) from (Select Book_No,COUNT(Book_No) mycount from Issue GROUP BY Book_No)); 
+G.	Select Book_No, Book_Name  from Books b join Issue i on b.Book_No=i.Book_No where TO_CHAR(Issue_Date, 'Month’) in ('December’) or TO_CHAR(Issue_Date, 'Month’) in ('July’); 
+H.	Select Book_No, Book_Name, Issue_Date, Return_date from Issue i join Books b on b.Book_No=i.Book_No join Member m on m.Member_Id=i.Member_Id where Member_Name=‘Stalin’; 
+I.	Select Book_Name, Category, MAX(Cost) from Books GROUP BY Category; 
+J.	Select Member_Id,Member_Name from Member m join Issue i on m.Member_Id=i.Member_Id where COUNT(Book_No)>Max_Books_Allowed; 
+
+Assignment : 3 
+ 
+A.	Select DISTINCT(JOB) from Employee; 
+B.	Select * from Employee where SAL > (Select SAL from Employee where ENAME =‘BLAKE’); 
+C.	Select * from Employee where JOB = (Select JOB from Employee where ENAME =‘ALLEN’); 
+D.	Select * from Employee where HIREDATE < (Select HIREDATE from Employee where ENAME = ‘KING’); 
+E.	Select * from Employee w, Employee m where w.EMPNO= m.MGR and w.HIREDATE< m.HIREDATE; 
+F.	Select * from Employee where JOB = (Select JOB from Employee where EMPNO=7788) and DEPTNO = (Select DEPTNO from Employee where EMPNO=7788); 
+G.	Select * from Employee e1 where SAL > (Select AVG(SAL) from Employee e2 where  e2.DEPTNO= e1. DEPTNO); 
+H.	Select * from Employee where HIREDATE > ( Select HIREDATE from Employee where ENAME = ‘Adam’); 
+I.	Select * from Employee e1where (N-1) = ( Select COUNT(DISTINCT(E2.SAL)) from Employee e2 where e2.SAL > e1.SAL); 
+J.	Select COUNT(SAL) , AVG(SAL) from Employee where DEPTNo=20; 
+ 
+ 
+

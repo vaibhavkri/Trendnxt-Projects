@@ -1,0 +1,8 @@
+id, season, city, date, team1, team2, toss_winner, toss_decision, result, dl_applied, winner, win_by_runs, win_by_wickets, player_of_match, venue, umpire1, umpire2, umpire3
+1,2008, Bangalore,18-05-2008, Kolkata Knight Riders, Royal Challengers Bangalore, Royal Challengers Bangalore, field, normal,0, Royal Challengers Bangalore,140,0, Royal Challengers Bangalore, Royal Challengers Bangalore, Asad Rauf, RE Koertzen,BillyBowden
+2,2011,Chennai,07-05-2011,KingsXIPunjab,Rajasthan Royals,Rajasthan Royals,bat,normal,0,Rajasthan Royals,18,4,Rajasthan Royals,Rajasthan Royals,BillyBowden, Asad Rauf,AsadRauf
+3,2014,Mohali,08-05-2014,Delhi Daredevils,ChennaiSuperkings,ChennaiSuperkings,bat,draw,0,Delhi Daredevils,36,5,Delhi Daredevils,Delhi Daredevils,BillyBowden,SimonTaufel,BillyBowden
+4,2016,Delhi,09-05-2016,Royal Challengers Bangalore,Delhi Daredevils,Royal Challengers Bangalore, field, normal,0,Royal Challengers Bangalore,59,2,Royal Challengers Bangalore,Royal Challengers Bangalore, Asad Rauf, RE Koertzen,BillyBowden
+5,2015,Chandigarh,10-05-2015,Rajasthan Royals,ChennaiSuperkings,Rajasthan Royals,bat,draw,0,Rajasthan Royals,56,8,Rajasthan Royals,Rajasthan Royals,BillyBowden, Asad Rauf,AsadRauf
+6,2015,Mumbai,11-05-2015,Mumbai Indians,Royal Challengers Bangalore,Mumbai Indians,bat,normal,0,Royal Challengers Bangalore,15,9,Royal Challengers Bangalore,Royal Challengers Bangalore,BillyBowden,SimonTaufel,BillyBowden
+7,2018,Kolkata,12-05-2018,Deccan Chargers,Kolkata Knight Riders,Kolkata Knight Riders,bat,normal,0,Kolkata Knight Riders,8,6,Kolkata Knight Riders,Kolkata Knight Riders,BillyBowden, Asad Rauf,BillyBowden

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script type="text/javascript">
+      function details(val){
+        var cd1 = {name:"CD1", publisher:"ABC", price: 100};
+        var cd2 = {name:"CD2", publisher:"PQR", price: 200};
+        if(val == "cd1"){
+          document.getElementById("show").innerHTML =
+          "CD NAME: " + cd1.name + "<br>Publisher: " + cd1.publisher + "<br>Price: " + (((cd1.price)*1.1)*0.97).toFixed(2);
+        }
+        else{
+          document.getElementById("show").innerHTML =
+          "CD NAME: " + cd2.name + "<br>Publisher: " + cd2.publisher + "<br>Price: " + (((cd2.price)*1.1)*0.97).toFixed(2);
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <h2>CD Details</h2>
+    <br><br>CD1: <input type="button" name="name" value="Show Details" onclick="details('cd1')">
+    <br><br>CD2: <input type="button" name="name" value="Show Details" onclick="details('cd2')">
+    <br><br><p id = "show"></p>
+  </body>
+</html>

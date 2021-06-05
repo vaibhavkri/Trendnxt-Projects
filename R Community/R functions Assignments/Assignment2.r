@@ -1,0 +1,1 @@
+rowSums(iris[,-5]) #row wise sum for col 1 to 4

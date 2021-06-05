@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<h4> Topic 12 Assignment 1:
+Write a JavaScript program to count and display the items of a dropdown list, in an alert
+window.
+</h4>
+</head>
+<body>
+<form>
+<select id="drop" name="cars">
+  <option value="volvo">Volvo</option>
+  <option value="BMW">BMW</option>
+  <option value="fiat">Fiat</option>
+  <option value="audi">Audi</option>
+</select>
+<button onclick="show()">show options</button>
+</form>
+<script type="text/javascript">
+function show(){
+
+var x=document.getElementById("drop");
+var txt="";
+var c=0;
+  for (var i = 0; i < x.length; i++) {
+    txt = txt + " " + x.options[i].text+"\n";
+	c++;
+  }
+
+window.alert(c+" options\n"+txt);
+
+}
+</script> 
+</body>

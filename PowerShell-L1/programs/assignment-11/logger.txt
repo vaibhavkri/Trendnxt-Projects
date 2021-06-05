@@ -1,0 +1,15 @@
+PS D:\trend_next\PowerShell-L1\assignment-11> dir                                                                       
+
+    Directory: D:\trend_next\PowerShell-L1\assignment-11
+
+
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+------        1/20/2020   1:35 PM            520 logger.ps1
+------        1/20/2020   1:35 PM             74 logrules.txt
+
+
+PS D:\trend_next\PowerShell-L1\assignment-11> .\logger                                                                  Enter the log message: hello
+Enter the debug level: D3
+PS D:\trend_next\PowerShell-L1\assignment-11>  Get-Content debug-log-level-3.log                                        20522020:035203: D3 hello
+PS D:\trend_next\PowerShell-L1\assignment-11>  

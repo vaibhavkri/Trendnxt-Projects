@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+	<head>
+		<title>Xena Events</title>
+		<style>
+			#title{
+				text-align:center;
+				padding:15px;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<header>
+			<div><h1 id='title'>Xena Events</p></h1>
+			<img src="logo2.jpg" alt="Xena Events logo 2" style="float:right;width:1000px;height:500px;">
+			
+		</header>
+		<h2>Event Registration.</h2>
+			<form>
+				Name:<br/>
+				<input type='text' pattern='[A-Za-z]+' /><br/><br/>
+				Age:<br/>
+				<input type='number' min='18'/><br/><br/>
+				E-Mail:<br/>
+				<input type='email' /><br/><br/>
+				City:<br/>
+				<input list='cities' name='cities'/>
+				<datalist id='cities' autocomplete>
+					<option value='Rajkot' />
+					<option value='Vizag' />
+					<option value='Bangalore' />
+				</datalist><br/><br/>
+				<input type='submit' />
+			</form>
+	</body>
+</html>

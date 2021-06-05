@@ -1,0 +1,82 @@
+Assignment : 1 
+ 
+A.	Identify the difference between sal NUMERIC and sal NUMBER(10,2).  
+NUMERIC - It contains two subtypes within it. The exact numeric data types are SMALLINT, INTEGER, BIGINT, and DECIMAL(p,s). The approximate numeric data types are FLOAT(p), REAL, and DOUBLE PRECISION.  
+NUMBER(10,2)-If we want to store decimal point numbers we have to use NUMBER(m,n). Here m will specify total number of digits including digits after decimal point allowed in the number to be stored and n will specify number of digits allowed after decimal point in the number in m digits. 
+ If we have created a column with data type NUMBER(10,2) . Then in this column we can store decimal point data up to 10 digit length. In these 10 digits before decimal point 7 digits are allowed and after decimal point 3 digits are allowed. 
+ 
+B.	State the difference between name CHAR(48) and name VARCHAR(48). 
+ 
+CHAR(48) data type will always take 48 bytes of data regardless of whether we are storing 1 character or 48 characters, which means one can store maximum of 48 characters in the column. 
+VARCHAR(48) will use the number of bytes equal to the number of characters. So, if we re storing only one character, then it will take only one byte and if you’re storing 48 characters, it will take 48 bytes, thus avoiding wastage of database space. 
+ 
+C.	State the difference between CHAR , VARCHAR2 and CLOB datatypes in oracle. 
+The CHAR datatype stores fixed-length character strings. When you create a table with a CHAR column, you must specify a string length (in bytes or characters) between 1 and 2000 bytes for the CHAR column width. The default is 1 byte. 
+The VARCHAR2 datatype stores variable-length character strings. When you create a table with a VARCHAR2 column, you specify a maximum string length between 1 and 4000 bytes for the VARCHAR2 column. For each row, Oracle Database stores each value in the column as a variable-length field.It saves on space used by the table. 
+ 
+CLOB is a character large object containing single-byte or multibyte characters. Both fixed-width and variable-width character sets are supported, both using the database character set. Maximum size is (4 gigabytes - 1) * (database block size). 
+D.	List the valid datatypes which are used to create variables in SQL * PLUS.  
+CHARACTER [(length)] or CHAR [(length)] , VARCHAR (length) , BOOLEAN , 
+SMALLINT , INTEGER or INT , DECIMAL [(p[,s])] or DEC [(p[,s])] , NUMERIC [(p[,s])] , REAL , FLOAT(p) , DOUBLE PRECISION , DATE , TIME , TIMESTAMP , CLOB [(length)] or CHARACTER LARGE OBJECT [(length)] or CHAR LARGE OBJECT [(length)] , BLOB [(length)] or BINARY LARGE OBJECT [(length)]  
+E.	Specify the usages of CLOB and BLOB datatypes in Oracle 
+LOB stands for Large OBject, a stream of data stored in a database. Maximum capacity of a LOB is (4 gigabytes-1) bytes. BLOB datatype stores unstructured binary large objects. BLOB objects can be thought of as bitstreams with no character set semantics.The CLOB datatype stores single-byte and multibyte character data. Both fixed-width and variable-width character sets are supported, and both use the database character set. 
+F.	Which datatype is used to store both the date and time to a column in oracle DATETIME  Datatype is used to store both the date and time to a column in oracle. G. What is the default format for the DATE type.  
+Oracle's default date format is YYYY-MM-DD 
+H.	Write a command to change the date format as ‘MMM DD YYYY’ 
+Select FORMAT(getdate(),’MMMM DD YYYY’) as date; 
+I.	Identify the difference between NUMBER and BINARY_FLOAT 
+NUMBER stores values as fixed-point numbers using 1 to 22 bytes. BINARY_FLOAT stores values as single precision floating-point numbers. J. Specify the usage of BFILE. 
+ 
+BFILE data type is an Oracle LOB data type that contains a reference to binary data with a maximum size of 4 gigabytes. It differs from other Oracle LOB data types in that its data is stored in a physical file in the operating system instead of on the server and provides read-only access to data. 
+ 
+
+ASSIGNMENT : 2 
+
+
+Differentiate between CHAR and NCHAR? 
+First, the maximum size of NCHAR is only in the character length semantics while the maximum size of CHAR can be in either character or byte length semantics.Second, NCHAR stores characters in national default character set whereas the CHAR stores characters in the default character set.The following statement returns the default character set used by CHAR and default national character set used by NCHAR: 
+SELECT 
+    * 
+FROM 
+    nls_database_parameters 
+WHERE 
+    PARAMETER IN( 
+        'NLS_CHARACTERSET', 
+        'NLS_NCHAR_CHARACTERSET' 
+    );  
+List all the numeric types available in ORACLE. 
+Data Types- number(p,s), numeric(p,s), float, dec(p,s),  decimal(p,s),  integer, int, smallest, real, double precision  
+Differentiate between DATE and TIMESTAMP 
+Supported range for DATETIME is '1000-01-01 00:00:00' to '9999-12-31 23:59:59' while for TIMESTAMP, it is '1970-01-01 00:00:01' UTC to '2038-01-09 03:14:07' UTC. 
+Prior to MySQL 5.6.4, TIMESTAMP requires 4 bytes (+3 bytes for fractional seconds) to store the data while DATETIME requires 8 bytes (+3 bytes for fractional seconds). 
+As of MySQL 5.6.4, DATETIME requires 5 bytes + 3 additional bytes for fractional seconds data storing. 
+In MySQL5+, TIMESTAMP value converts from current time to UTC and vice-versa while DATETIME does not do any conversion. 
+TIMESTAMP differs with current time zone settings while DATETIME remains constant. 
+TIMESTAMP data can be indexed while the DATETIME data cannot. 
+Queries with DATETIME will not be cached but queries with TIMESTAMP will be cached. 
+Differentiate between BLOB and BFILE. 
+The Oracle BLOB and BFILE data types are used to store blocks of unstructured data. Database columns of these types store locators. 
+ For the BLOB data type, the data is stored within the database. For the BFILE, the data is stored outside of Oracle as an operating system file. For this reason, the BFILE data type is read-only, and cannot be modified or participate in a transaction. 
+The BFILE datatype is a reference to a filesystem file. The data does not reside in the Oracle database and it is not managed by the database. 
+If you want to store your image data in the database and have it managed by the database then you should use the ORDIMAGE datatype. This type uses an underlying BLOB to store the data in the database. It also adds image specific type attributes (width, height mimetype etc) to the datatype structure.  
+ 
+Differentiate between INTEGER and SMALLINT 
+Small integer 
+This data type is used to store binary integer values that have a precision of 15 bits. The range for a small integer value is -32 768 to +32 767. The small integer data type uses the smallest amount of storage space possible to store numerical values (2 bytes of space is required for each value stored). The term SMALLINT is used to declare a small integer column in a table definition. 
+Integer 
+This data type is used to store binary integer values that have a precision of 31 bytes. Although the integer data type requires twice as much storage space as the small integer data type (4 bytes of space is required for each value stored), its range of values is much greater. The range for an integer value is -2 147 483 648 to +2 147 483 647. The terms INTEGER and INT can be used to declare an integer column in a table definition. 
+ 
+State the difference between empNo INTEGER and empNo NUMBER 
+Integers cannot take decimal or fractional values, while numerics can. Numerics act more like the "float" or "double" types supported by many other programming languages. Numeric is a catch-all type that is typically just a double underneath. 
+Which type is used to store only the date. 
+Date Data type stores date and time information.DATE always have a Time part associated with it. If we want to ignore it we can use TRUNCATE function. 
+Identify the difference between LONG and RAW types. 
+The RAW and LONG RAW datatypes are used for data that is not to be interpreted (not converted when moving data between different systems) by Oracle.  
+When Oracle automatically converts RAW or LONG RAW data to and from CHAR data, the binary data is represented in hexadecimal form with one hexadecimal character representing every four bits of RAW data. For example, one byte of RAW data with bits 11001011 is displayed and entered as 'CB'. 
+LONG RAW data cannot be indexed, but RAW data can be indexed. 
+Differentiate between VARCHAR2 and NVARCHAR2 
+First, the maximum size of VARCHAR2 can be in either bytes or characters, whereas the maximum size of NVARCHAR2 is only in characters. In addition, the maximum byte length of an NVARCHAR2 depends on the configured national character set. 
+Second, a VARCHAR2 column only can store characters in the default character set while the NVARCHAR2 can store virtually any characters 
+When to use CLOB and BLOB datatype. 
+BLOB : Variable-length binary large object string that can be up to 2GB (2,147,483,647) long. Primarily intended to hold non-traditional data, such as voice or mixed media. BLOB strings are not associated with a character set, as with FOR BIT DATA strings. 
+CLOB : Variable-length character large object string that can be up to 2GB (2,147,483,647) long. A CLOB can store single-byte character strings or multibyte, character-based data. A CLOB is considered a character string. 
